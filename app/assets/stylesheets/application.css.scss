@@ -13,3 +13,33 @@
  *= require_tree .
  *= require_self
  */
+
+@import "semantic-ui";
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  & .ui {
+    margin-top: 16px;
+    flex: 1;
+  }
+}
+
+form[action="search"] button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.ui.stackable.menu {
+  @media (max-width: 768px) {
+    .item, .right.menu {
+      display: none;
+    }
+    .header.item {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Productions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>Location label</th>
+      <th>Location uri</th>
+      <th>Date of first performance</th>
+      <th>Production company uri</th>
+      <th>Production company label</th>
+      <th>Description</th>
+      <th>Main image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @productions.each do |production| %>
+      <tr>
+        <td><%= production.label %></td>
+        <td><%= production.location_label %></td>
+        <td><%= production.location_uri %></td>
+        <td><%= production.date_of_first_performance %></td>
+        <td><%= production.production_company_uri %></td>
+        <td><%= production.production_company_label %></td>
+        <td><%= production.description %></td>
+        <td><%= production.main_image %></td>
+        <td><%= link_to 'Show', production %></td>
+        <td><%= link_to 'Edit', edit_production_path(production) %></td>
+        <td><%= link_to 'Destroy', production, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Production', new_production_path %>
