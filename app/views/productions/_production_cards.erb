@@ -1,0 +1,21 @@
+<h1 class="header"><%= name %></h1>
+<div class="ui divider"></div>
+<div class="ui link cards app-cards">
+  <% production_list.each do |production| %>
+    <a class="card" href="<%= production_path(production) %>">
+      <div class="image">
+        <img src="http://www.mhs.mb.ca/docs/mb_history/43/theatrehistory1.jpg">
+      </div>
+      <div class="content">
+        <div class="header"><%= production.label %></div>
+        <div class="meta"><%= production.date_of_first_performance %></div>
+        <div class="description"><%= truncate production.description, length: 100, seperator: /\w+/ %></div>
+      </div>
+      <div class="extra content">
+        <span>
+          <i class="arrow alternate circle down outline icon"></i> <%= production.location_label %>
+        </span>
+      </div>
+    </a>
+  <% end %>
+</div>

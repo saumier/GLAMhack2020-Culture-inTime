@@ -1,0 +1,15 @@
+<div class="ui raised segment search-container">
+  <img class="ui centered medium image" src="https://www.bl.uk/britishlibrary/~/media/bl/global/dl%20romantics%20and%20victorians/banners/theatre-banner.jpg" >
+</div>
+<div class="ui raised segment no padding">
+  <form method="GET" action="search">
+    <div class="ui fluid icon transparent large input">
+      <input name="query" type="text" placeholder="Search productions..." autocomplete="off" />
+      <button type="submit">
+        <i class="search icon"></i>
+      </button> 
+    </div>
+  </form>
+</div>
+
+<%= render partial: "productions/production_cards", locals: { name: "Recently Viewed", production_list: @most_viewed } %>
