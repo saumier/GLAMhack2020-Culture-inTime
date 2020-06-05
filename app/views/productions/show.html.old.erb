@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Label:</strong>
+  <%= @production.label %>
+</p>
+
+<p>
+  <strong>Location label:</strong>
+  <%= @production.location_label %>
+</p>
+
+<p>
+  <strong>Location uri:</strong>
+  <%= @production.location_uri %>
+</p>
+
+<p>
+  <strong>Date of first performance:</strong>
+  <%= @production.date_of_first_performance %>
+</p>
+
+<p>
+  <strong>Production company uri:</strong>
+  <%= @production.production_company_uri %>
+</p>
+
+<p>
+  <strong>Production company label:</strong>
+  <%= @production.production_company_label %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @production.description %>
+</p>
+
+<p>
+  <strong>Main image:</strong>
+  <%= @production.main_image %>
+</p>
+
+<%= link_to 'Edit', edit_production_path(@production) %> |
+<%= link_to 'Back', productions_path %>
