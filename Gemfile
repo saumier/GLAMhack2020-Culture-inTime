@@ -33,6 +33,12 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# For seed data
+gem 'faker', '~> 1.8.7'
+
+# Semantic UI Css library
+gem 'semantic-ui-sass'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
