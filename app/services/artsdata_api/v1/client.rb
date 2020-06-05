@@ -11,25 +11,24 @@ module ArtsdataAPI
         @graph_repository = graph_repository
       end
 
-      def execute_sparql sparql 
-        resp = request_json(
+      def execute_sparql sparql
+        data = request_json(
           http_method: :post,
           endpoint: "/repositories/#{@graph_repository}",
-          params: { 'query': sparql.squish }
+          params: { 'query': sparql }
         )
-        return resp['results']['bindings']
+        data['results']['bindings']
       end
 
       private
 
       def client
-        @_client ||= Faraday.new(API_ENDPOINT) do |client|
+        @client ||= Faraday.new(API_ENDPOINT) do |client|
           client.request :url_encoded
           client.adapter Faraday.default_adapter
           client.headers['Authorization'] = "token #{oauth_token}" if oauth_token.present?
         end
       end
-
 
       def request_text(http_method:, endpoint:, params: {})
         client.headers['Accept'] = 'application/json'
@@ -41,6 +40,7 @@ module ArtsdataAPI
       def request_json(http_method:, endpoint:, params: {})
         client.headers['Accept'] = 'application/json'
         response = client.public_send(http_method, endpoint, params)
+        puts response.inspect
         Oj.load(response.body)
       end
 
