@@ -1,5 +1,3 @@
-# README
-
 GLAMhack 2020 - Culture inTime
 =========================
 
