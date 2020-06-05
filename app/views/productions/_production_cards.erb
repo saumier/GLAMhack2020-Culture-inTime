@@ -4,7 +4,7 @@
   <% production_list.each do |production| %>
     <a class="card" href="<%= production_path(production) %>">
       <div class="image">
-        <img src="http://www.mhs.mb.ca/docs/mb_history/43/theatrehistory1.jpg">
+        <img src="<%= production_image(production) %>">
       </div>
       <div class="content">
         <div class="header"><%= production.label %></div>
