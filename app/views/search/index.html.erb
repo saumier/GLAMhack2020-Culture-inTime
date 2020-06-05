@@ -1,0 +1,30 @@
+<div class="ui raised segment">
+  <h1 class="ui header"><%= params[:query] %> (<%= @productions.count %> results)</h1>  
+  <div class="ui divider"></div>
+  <div class="ui divided link items">
+    <% @productions.each do |production| %>
+      <a class="item" href="<%= production_path(production) %>">
+        <div class="small image">
+          <img src="<%= production_image(production) %>">
+        </div>
+        <div class="content">
+          <div class="header"><%= production.label %></div>
+          <div class="meta">
+            <span><%= production.date_of_first_performance %></span>
+          </div>
+          <div class="description">
+            <p><%= truncate production.description, length: 250, seperator: /\w+/ %></p>
+          </div>
+          <div class="extra">
+            <div class="ui right floated primary button">
+              View More
+              <i class="right chevron icon"></i>
+            </div>
+            <div class="ui label"><i class="green arrow alternate circle down outline icon"></i> <%=production.location_label %> </div>
+        
+          </div>
+        </div>
+      </a>
+    <% end %>
+  </div>
+</div>
