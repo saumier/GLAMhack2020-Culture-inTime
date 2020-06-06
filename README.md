@@ -8,17 +8,20 @@ Go to https://culture-intime.herokuapp.com/ and view calendar
 
 Data Sources
 =========================
-Building on dataset already integrated into Wikidata: data from Schauspielehaus, Zurich
+Building on dataset already integrated into Wikidata: data from Schauspielehaus, Zurich. For reference see: https://www.wikidata.org/wiki/Wikidata:WikiProject_Performing_arts/Reports/Ingesting_Production_Databases_of_the_Performing_Arts
 Using data from Artsdata.ca: pan-Canadian knowledge graph for the performing arts 
 
 
 Background
 =========================
-The intention of this project was to --- .
+The intention of this project was to twofold:
+-reduce duplication of work in area of data entry
+-
+
 The code is a simple as possible to demonstrate the potential of using LOD (structured data) to create a calendar for arts and cultural events that is generated from data in Wikidata and the Artsdata.ca knowledge graph. 
 
 The user interface is designed to allow visitors to search for events. They can:
-- Select a time perido
+- Select a time period
 - Select an image from a gallery to find related events
 - Enter a location (currently, data only exists for Switzerland and Canada (country), Zurich or Montreal/Laval (city)  
 - Enter name of production
