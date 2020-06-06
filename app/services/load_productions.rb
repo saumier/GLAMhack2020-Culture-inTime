@@ -36,6 +36,8 @@ class LoadProductions
       p.country = production['country']['value'] if production['country']
       p.locality = production['locality']['value'] if production['locality']
       p.production_uri = production['production_uri']['value'] if production['production_uri']
+      p.production_company_label = production['production_company_label']['value'] if production['production_company_label']
+      p.production_company_uri = production['production_company_uri']['value'] if production['production_company_uri']
       p.save
       p
     end
