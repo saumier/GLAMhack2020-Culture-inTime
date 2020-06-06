@@ -59,4 +59,4 @@ Event Details page - Montreal
 
 Production Details page - Zurich
 
-![Alt text](/images/ProductionDetails- Schauspielhaus Zurich.png "Spotlight Page")
+![Alt text](/images/ProductionDetails- Schauspielhaus Zurich.png "Production Details")
