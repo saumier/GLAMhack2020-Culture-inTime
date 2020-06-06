@@ -9,11 +9,14 @@ WHERE {
   SERVICE <https://query.wikidata.org/sparql>
     { ?production_uri (wdt:P31/wdt:P279*) wd:Q43099500 ;
         wdt:P276*/wdt:P131 wd:Q72 ;
-        rdfs:label ?label ;
-        wdt:P1191 ?start ;
-        schema:description ?description .
+        wdt:P1191 ?start .
+        
+      OPTIONAL { ?production_uri  rdfs:label ?label_en .  filter (lang(?label_en) = "en")  }
+      OPTIONAL { ?production_uri  rdfs:label ?label_de .  filter (lang(?label_de) = "de")  }
+      OPTIONAL { ?production_uri  rdfs:label ?label_fr .  filter (lang(?label_fr) = "fr")  }
+      BIND (coalesce (?label_en, ?label_de, ?label_fr) as ?label)
       
-      filter (lang(?label) = "en") 
+      ?production_uri schema:description ?description .
       filter (lang(?description) = "en") 
       
       ?production_uri wdt:P276/rdfs:label ?venue
@@ -21,6 +24,6 @@ WHERE {
       
       values ?locality {"Zürich"}
       values ?country {"Switzerland"}
-  }
+    }
 } 
-LIMIT 200
+LIMIT 1000
