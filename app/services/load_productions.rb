@@ -16,11 +16,11 @@ class LoadProductions
     #  "Production.delete_all "production_id = 5 AND (category = 'Something' OR category = 'Else')"
     productions = @data.map do |production|
       p = Production.new
-      p.label = production['label']['value']
-      p.location_label = production['venue']['value']
-      p.date_of_first_performance = production['start']['value']
-      p.description = production['description']['value'].squish
-      p.main_image = production['image']['value']
+      p.label = production['label']['value'] if production['label']
+      p.location_label = production['venue']['value'] if production['venue']
+      p.date_of_first_performance = production['start']['value'] if production['start']
+      p.description = production['description']['value'].squish if production['description']
+      p.main_image = production['image']['value'] if production['image']
       p.save
       p
     end

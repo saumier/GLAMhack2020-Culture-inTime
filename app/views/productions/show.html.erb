@@ -7,16 +7,21 @@
       <div class="content">
         <h1 class="header"><%= @production.label %></h1>
         <div class="meta">
-          <span class="cinema">First performance <%= @production.date_of_first_performance.strftime("%F") %></span>
+          <span class="cinema"> <%=I18n.l(@production.date_of_first_performance, format: :long) %></span>
         </div>
-       
-       
-        <div class="bottom aligned content">
-          <button class="ui primary button" disabled><%= @production.location_label %></button>
+        <div class="extra">
+            <div class="ui right floated primary button">
+              View More
+              <i class="right chevron icon"></i>
+            </div>
+            <div class="ui label"><i class="green arrow alternate circle down outline icon"></i> <%= @production.location_label %> </div>
+        
         </div>
+        <% if @production.production_company_label %>
          <div class="meta">
           <span class="version">Production company: <%= @production.production_company_label %></span>
         </div>
+        <% end %>
       </div>
     </div>
   </div>
@@ -24,7 +29,7 @@
  
   <h2 class="header">Description</h2>
   <div>
-    <p><%= @production.description %></p>
+    <p><%= strip_tags(@production.description) %></p>
   </div>
   <div class="ui divider"></div>
   <h2 class="header">Related Images</h2>
