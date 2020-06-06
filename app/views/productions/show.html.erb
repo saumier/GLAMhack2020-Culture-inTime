@@ -26,14 +26,33 @@
           <span class="cinema"> <%= @production.locality %>,  <%= @production.country %></span>
         </div>
        
-        <% if @production.production_company_label %>
-         <div class="meta">
-          <span class="version">Production company: <%= @production.production_company_label %></span>
-        </div>
-        <% end %>
+       
       </div>
     </div>
   </div>
+
+   <% if @production.production_company_label %>
+
+     <div class="ui divider"></div>
+ 
+      <h2 class="header">Production Company</h2>
+
+          <div class="extra">
+
+      
+    <div class="extra">
+          <a href="<%=@production.production_company_uri %>">
+            <div class="ui right floated primary button">
+              Visit Company
+              <i class="right chevron icon"></i>
+            </div>
+          </a>
+            <span class="version"> <a href="<%=  @production.production_company_uri %>"><%= @production.production_company_label %></a></span>
+          </div>
+      
+      <br>
+    <% end %>
+
   <div class="ui divider"></div>
  
   <h2 class="header">Description</h2>
