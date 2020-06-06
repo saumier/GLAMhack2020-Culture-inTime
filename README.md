@@ -15,9 +15,9 @@ Using data from Artsdata.ca: pan-Canadian knowledge graph for the performing art
 Background
 =========================
 The intention of this project was to two-fold:
--A robust listing that presents audiences with things they are interested in, allows them to learn about performing arts productions and events, bookmark them and alert them when they are about to start.
+-Provide a robust listing of arts and cultural events, both historical and current. Audiences are able to search for things they are interested in, learn more about performing arts productions and events, find new interests, et cetera.
 - Reduce duplication of work in area of data entry
-- 
+
 
 The code is a simple as possible to demonstrate the potential of using LOD (structured data) to create a calendar for arts and cultural events that is generated from data in Wikidata and the Artsdata.ca knowledge graph. 
 
