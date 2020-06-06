@@ -8,7 +8,7 @@
       </div>
       <div class="content">
         <div class="header"><%= production.label %></div>
-        <div class="meta"><%= I18n.l(production.date_of_first_performance, format: :long) %></div>
+        <div class="meta"><%= date_display(production.date_of_first_performance) %></div>
         <div class="description"> <%= truncate(strip_tags(production.description), length: 100, seperator: /\w+/) %></div>
       </div>
       <div class="extra content">

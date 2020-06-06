@@ -10,4 +10,9 @@ module ProductionsHelper
       production.main_image
     end
   end
+
+  def date_display(date_time)
+    #I18n.l(date_time, format: :long)
+    date_time.httpdate
+  end
 end
