@@ -5,4 +5,8 @@ class HomeController < ApplicationController
     @most_viewed = Production.order(updated_at: :desc).limit(5)
   end
 
+  def spotlight
+    @spotlights = Production.limit(3)
+  end
+
 end
