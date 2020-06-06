@@ -14,19 +14,20 @@ Using data from Artsdata.ca: pan-Canadian knowledge graph for the performing art
 
 Background
 =========================
-The intention of this project was to twofold:
--reduce duplication of work in area of data entry
--
+The intention of this project was to two-fold:
+-A robust listing that presents audiences with things they are interested in, allows them to learn about performing arts productions and events, bookmark them and alert them when they are about to start.
+- Reduce duplication of work in area of data entry
+- 
 
 The code is a simple as possible to demonstrate the potential of using LOD (structured data) to create a calendar for arts and cultural events that is generated from data in Wikidata and the Artsdata.ca knowledge graph. 
 
 The user interface is designed to allow visitors to search for events. They can:
-- Select a time period
-- Select an image from a gallery to find related events
-- Enter a location (currently, data only exists for Switzerland and Canada (country), Zurich or Montreal/Laval (city)  
-- Enter name of production
-- Type of production (WD: instance of…)
-- Title (free text search)
+- Use the Spotlight feature to quickly view events based on the following search criteria: name of city and predetermined date range.
+- Use Time Period buttons to search a time period (international).
+- Use a Search field to enter a search using the following criteria: name of production, city and country.
+- Select an image from a gallery to find related information.
+
+Note: Currently when you enter a location, data only exists for Switzerland and Canada (country), Zurich or Montreal/Laval (city)  
 
 Search results list events sorted by date, title and location.
 
