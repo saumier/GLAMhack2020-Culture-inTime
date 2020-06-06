@@ -9,7 +9,7 @@ WHERE {
     schema:location/schema:address/schema:addressLocality ?locality ;
     schema:url ?production_uri .
   
-  filter(?start > '2020-08-01T08:00:00Z'^^xsd:dateTime)
+  filter(?start > '2017-08-01T08:00:00Z'^^xsd:dateTime)
   
   OPTIONAL {   ?e schema:name ?label_en   filter (lang(?label_en) = "en")} .
   OPTIONAL {   ?e schema:name   ?label_fr  filter (lang(?label_fr) = "fr")} .
