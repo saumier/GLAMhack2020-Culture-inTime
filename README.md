@@ -33,7 +33,8 @@ Note: Currently when you enter a location, data only exists for Switzerland and 
 Search results list events sorted by date, title and location.
 
 
-Challenges: 
+Challenges
+=========================
 Data is modelled differently in Wikidata, Artsdata, and even between projects within the same database.
 Data has very few images.
 
