@@ -26,6 +26,7 @@ The user interface is designed to allow visitors to search for events. They can:
 - Use Time Period buttons to search a time period (international).
 - Use a Search field to enter a search using the following criteria: name of production, city and country.
 - Select an image from a gallery to find related information.
+- Visit the source of the data to learn more (in the example of an Artsdata.ca event, Click Visit Source to be redirected to the Art Organization website.
 
 Note: Currently when you enter a location, data only exists for Switzerland and Canada (country), Zurich or Montreal/Laval (city)  
 
