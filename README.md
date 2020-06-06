@@ -40,4 +40,4 @@ Data has very few images.
 
 UI Images
 =========================
-![Alt text](/relative/path/to/HomePage.png "Home Page")
+![Alt text](/images/HomePage.png "Home Page")
