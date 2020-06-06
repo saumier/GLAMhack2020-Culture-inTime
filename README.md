@@ -53,6 +53,10 @@ Spotlight Page
 
 ![Alt text](/images/Spotlight.png "Spotlight Page")
 
-Production or Event Details page
+Event Details page - Montreal
 
 ![Alt text](/images/ProductionDetails.png "Production Details")
+
+Production Details page - Zurich
+
+![Alt text](/images/ProductionDetails- Schauspielhaus Zurich.png "Spotlight Page")
