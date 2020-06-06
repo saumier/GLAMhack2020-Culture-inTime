@@ -41,5 +41,7 @@ Challenges
 Data is modelled differently in Wikidata, Artsdata, and even between projects within the same database.
 Data has very few images.
 
-UI Images
+More UI Images
 =========================
+Production or Event Details page
+![Alt text](/images/ProductionDetails.png "Production Details")
