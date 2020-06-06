@@ -24,7 +24,8 @@ Now, the time has come to shift our focus towards creating concrete applications
 This will allow us to demonstrate the power of linked data and to start providing value to users.
 At the same time, it will allow us to tackle issues related to data modelling and data federation based on concrete use cases.
 
-“Culture InTime” is one such application. It is a kind of universal cultural calendar, which allows us to put the Spotlight on areas and timespans where coherent sets of data have already been published as linked data. At the same time, the app fetches data from living data sources on the fly. It can:
+“Culture InTime” is one such application. It is a kind of universal cultural calendar, which allows us to put the Spotlight on areas and timespans where coherent sets of data have already been published as linked data. At the same time, the app fetches data from living data sources on the fly. And as more performing arts data is being added to these data sources, they will automatically show up.
+It can:
 - Provide a robust listing of arts and cultural events, both historical and current. Audiences are able to search for things they are interested in, learn more about performing arts productions and events, find new interests, et cetera.
 - Reduce duplication of work in area of data entry
 
