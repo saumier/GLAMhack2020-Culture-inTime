@@ -38,3 +38,6 @@ Challenges
 Data is modelled differently in Wikidata, Artsdata, and even between projects within the same database.
 Data has very few images.
 
+UI Images
+=========================
+![Alt text](/relative/path/to/HomePage.png "Home Page")
