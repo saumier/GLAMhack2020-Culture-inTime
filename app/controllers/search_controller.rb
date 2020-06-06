@@ -1,7 +1,7 @@
 class SearchController < ApplicationController
 
   def index
-    @productions = Production.where("lower(label) LIKE ?", "%#{params[:query].downcase}%")
+    @productions = Production.where('lower(label) LIKE :search OR lower(locality) LIKE :search', search: "%#{params[:query].downcase}%")
   end
 
 end

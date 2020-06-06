@@ -2,15 +2,15 @@
 
 PREFIX schema: <http://schema.org/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-SELECT REDUCED  ?start  ?label ?description  ?venue ?image ?locality ?country
+SELECT REDUCED  ?start  ?label ?description  ?venue ?image ?locality ?country ?production_uri
 WHERE {
   ?e a schema:Event ; 
   	schema:startDate ?start ;
-    schema:location/schema:address/schema:addressLocality ?locality
+    schema:location/schema:address/schema:addressLocality ?locality ;
+    schema:url ?production_uri .
   
-  filter(?start > '2020-06-05T19:01:52.798Z'^^xsd:dateTime)
+  filter(?start > '2020-08-01T08:00:00Z'^^xsd:dateTime)
   
-	
   OPTIONAL {   ?e schema:name ?label_en   filter (lang(?label_en) = "en")} .
   OPTIONAL {   ?e schema:name   ?label_fr  filter (lang(?label_fr) = "fr")} .
   OPTIONAL {   ?e schema:name  ?label_plain  filter (lang(?label_plain) = "") } .
@@ -20,6 +20,7 @@ WHERE {
   
   ?e schema:location/schema:name ?venue
   filter (lang(?venue) = '')
+  filter (?venue != "Sanderson Centre")
   OPTIONAL { ?e schema:image ?image }
 
   values ?country {"Canada"}

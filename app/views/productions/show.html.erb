@@ -10,13 +10,22 @@
           <span class="cinema"> <%=I18n.l(@production.date_of_first_performance, format: :long) %></span>
         </div>
         <div class="extra">
+          <a href="<%=@production.production_uri %>">
             <div class="ui right floated primary button">
-              View More
+              Visit Source
               <i class="right chevron icon"></i>
             </div>
-            <div class="ui label"><i class="green arrow alternate circle down outline icon"></i> <%= @production.location_label %> </div>
+            </a>
         
+            <div class="ui label">
+              <i class="green arrow alternate circle down outline icon"></i>
+              <%= @production.location_label %>
+            </div>
         </div>
+        <div class="meta">
+          <span class="cinema"> <%= @production.locality %>,  <%= @production.country %></span>
+        </div>
+       
         <% if @production.production_company_label %>
          <div class="meta">
           <span class="version">Production company: <%= @production.production_company_label %></span>

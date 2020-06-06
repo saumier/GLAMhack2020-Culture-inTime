@@ -1,0 +1,26 @@
+PREFIX schema: <http://schema.org/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?production_uri ?label ?venue ?start ?description ?locality ?country
+WHERE { 
+  
+  SERVICE <https://query.wikidata.org/sparql>
+    { ?production_uri (wdt:P31/wdt:P279*) wd:Q43099500 ;
+        wdt:P276*/wdt:P131 wd:Q72 ;
+        rdfs:label ?label ;
+        wdt:P1191 ?start ;
+        schema:description ?description .
+      
+      filter (lang(?label) = "en") 
+      filter (lang(?description) = "en") 
+      
+      ?production_uri wdt:P276/rdfs:label ?venue
+      filter (lang(?venue) = "en") 
+      
+      values ?locality {"Zürich"}
+      values ?country {"Switzerland"}
+  }
+} 
+LIMIT 200
