@@ -41,7 +41,6 @@ module ArtsdataAPI
         client.headers['Accept'] = 'application/json'
         client.headers['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8'
         response = client.public_send(http_method, endpoint, params)
-        puts response.inspect
         Oj.load(response.body)
       end
 
