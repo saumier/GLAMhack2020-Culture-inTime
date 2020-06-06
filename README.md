@@ -50,6 +50,9 @@ Data has very few images.
 More UI Images
 =========================
 Spotlight Page
+
 ![Alt text](/images/Spotlight.png "Spotlight Page")
+
 Production or Event Details page
+
 ![Alt text](/images/ProductionDetails.png "Production Details")
