@@ -27,4 +27,4 @@ WHERE {
 
 } 
 ORDER BY ?start ?label 
-LIMIT 3000
+LIMIT 9000
