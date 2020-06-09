@@ -67,6 +67,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-
-gem 'oj'
 gem 'faraday'
+gem 'oj'
+gem 'will_paginate'
+gem "will_paginate_semantic_ui"

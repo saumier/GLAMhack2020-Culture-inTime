@@ -1,7 +1,10 @@
 <div class="ui raised segment">
-  <h1 class="ui header"><%= params[:query] %> (<%= @productions.count %> results)</h1>  
+  <h1 class="ui header"><%= params[:query] %> <%= @productions.count %> results</h1>  
   <div class="ui divider"></div>
   <div class="ui divided link items">
+
+  <%= will_paginate @productions, renderer: WillPaginateSemanticUi::ActionView::Renderer %>
+
     <% @productions.each do |production| %>
       <a class="item" href="<%= production_path(production) %>">
         <div class="small image">
@@ -16,9 +19,7 @@
             <p><%= truncate strip_tags(production.description), length: 250, seperator: /\w+/ %></p>
           </div>
           <div class="extra">
-           
             <div class="ui label"><i class="green arrow alternate circle down outline icon"></i> <%=production.location_label %> </div>
-        
           </div>
         </div>
       </a>
