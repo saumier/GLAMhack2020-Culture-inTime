@@ -28,10 +28,10 @@ class LoadProductions
     puts "loading..."
     productions = @data.map do |production|
       p = Production.new
-      p.label = production['label']['value'] if production['label']
+      p.label = CGI.unescapeHTML(production['label']['value']) if production['label']
       p.location_label = production['venue']['value'] if production['venue']
       p.date_of_first_performance = production['start']['value'] if production['start']
-      p.description = production['description']['value'].squish if production['description']
+      p.description = CGI.unescapeHTML(production['description']['value']).squish if production['description']
       p.main_image = production['image']['value'] if production['image']
       p.country = production['country']['value'] if production['country']
       p.locality = production['locality']['value'] if production['locality']
