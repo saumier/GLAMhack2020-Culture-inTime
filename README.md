@@ -1,6 +1,6 @@
 GLAMhack 2020 - Culture inTime
 =========================
-Simple event calendar for public viewing that written in Rails, SParQl and Semantic UI (web interface platform). Using existing linked open data (LOD) on productions & events, locations & venues, and dates to feed contemporary and historical data into this calendar. Coming soon: LOD on artists and works. 
+Simple event calendar for public viewing that written in Rails, SPARQL and Semantic UI (web interface platform). Using existing linked open data (LOD) on productions & events, locations & venues, and dates to feed contemporary and historical data into this calendar. Coming soon: LOD on artists and works. 
 
 Go to https://culture-intime.herokuapp.com/ and view calendar
 
@@ -11,8 +11,9 @@ Go to https://culture-intime.herokuapp.com/ and view calendar
 
 Data Sources
 =========================
-Building on dataset already integrated into Wikidata: data from Schauspielehaus, Zurich. For reference see: https://www.wikidata.org/wiki/Wikidata:WikiProject_Performing_arts/Reports/Ingesting_Production_Databases_of_the_Performing_Arts
-Using data from Artsdata.ca: pan-Canadian knowledge graph for the performing arts 
+Building on existing data sources:
+* Dataset already integrated into Wikidata: data from Schauspielehaus, Zurich. For reference see: https://www.wikidata.org/wiki/Wikidata:WikiProject_Performing_arts/Reports/Ingesting_Production_Databases_of_the_Performing_Arts
+* Dataset from Artsdata.ca: pan-Canadian knowledge graph for the performing arts 
 
 
 Background
