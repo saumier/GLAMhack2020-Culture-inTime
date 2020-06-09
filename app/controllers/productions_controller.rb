@@ -10,6 +10,24 @@ class ProductionsController < ApplicationController
   # GET /productions/1
   # GET /productions/1.json
   def show
+    @performances_client ||= LoadPerformances.new
+    @performance_dates = []
+    @performance_urls = []
+    @performance_tickets = []
+
+    return unless @production.country == 'Canada'
+
+    data = @performances_client.canada(@production.production_uri)
+    @performance_dates = data.map { |performance| performance['startDate']['value'] }
+                             .uniq
+                             .reject(&:blank?)
+                             .sort
+    @performance_urls = data.map { |performance| performance.dig('webpage', 'value') }
+                            .uniq
+                            .reject(&:blank?)
+    @performance_tickets = data.map { |performance| performance.dig('offer_url', 'value') }
+                               .uniq
+                               .reject(&:blank?)
   end
 
   # GET /productions/new

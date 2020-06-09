@@ -1,0 +1,8 @@
+PREFIX schema: <http://schema.org/>
+select * where { 
+   <http://kg.artsdata.ca/resource/dansedanse-ca_animals-distinction-frontera>  ^schema:superEvent ?event .
+    OPTIONAL { ?event schema:startDate ?startDate . }   
+    OPTIONAL { ?event schema:url ?webpage . }   
+    OPTIONAL { ?event schema:offers/schema:url ?offer_url }  
+                                                                                                           
+} limit 100 

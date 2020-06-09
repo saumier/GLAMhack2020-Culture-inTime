@@ -12,49 +12,44 @@
         <div class="extra">
           <a href="<%=@production.production_uri %>">
             <div class="ui right floated primary button">
-              Visit Source
+              Date Source
               <i class="right chevron icon"></i>
             </div>
-            </a>
-        
-            <div class="ui label">
-              <i class="green arrow alternate circle down outline icon"></i>
-              <%= @production.location_label %>
-            </div>
+          </a>
+          <div class="ui label">
+            <i class="green arrow alternate circle down outline icon"></i>
+            <%= @production.location_label %>
+          </div>
         </div>
         <div class="meta">
-          <span class="cinema"> <%= @production.locality %>,  <%= @production.country %></span>
+          <span class="cinema"> <%= @production.locality %>, <%= @production.country %></span>
         </div>
-       
-       
+
+        <%= render 'performance_data'%>
+
       </div>
     </div>
   </div>
 
-   <% if @production.production_company_label.present? %>
-
-     <div class="ui divider"></div>
- 
-      <h2 class="header">Production Company</h2>
-
-          <div class="extra">
-
-      
+  <% if @production.production_company_label.present? %>
+    <div class="ui divider"></div>
+    <h2 class="header">Production Company</h2>
     <div class="extra">
-          <a href="<%=@production.production_company_uri %>">
-            <div class="ui right floated primary button">
-              Visit Company
-              <i class="right chevron icon"></i>
-            </div>
-          </a>
-            <span class="version"> <a href="<%=  @production.production_company_uri %>"><%= @production.production_company_label %></a></span>
-          </div>
-      
-      <br>
-    <% end %>
+      <a href="<%=@production.production_company_uri %>">
+        <div class="ui right floated primary button">
+          Visit Company
+          <i class="right chevron icon"></i>
+        </div>
+      </a>
+      <span class="version"> <a
+          href="<%=  @production.production_company_uri %>"><%= @production.production_company_label %></a></span>
+    </div>
+
+    <br>
+  <% end %>
 
   <div class="ui divider"></div>
- 
+
   <h2 class="header">Description</h2>
   <div>
     <p><%= strip_tags(@production.description) %></p>
@@ -62,9 +57,11 @@
   <div class="ui divider"></div>
   <h2 class="header">Related Images</h2>
   <div style="overflow-x: scroll; display: flex;">
-    <img src="https://dummyimage.com/420x320/ff7f7f/333333.png&text=Sample 1" >
-    <img src="https://dummyimage.com/420x320/7f7fff/333333.png&text=Sample 2" >
-    <img src="https://dummyimage.com/420x320/7fff7f/333333.png&text=Sample 3" >
-    <img src="https://dummyimage.com/420x320/7f7f7f/333333.png&text=Sample 4" >
+    <% if @production.main_image.present? %>
+      <img src="<%= production_image(@production) %>">
+    <% end %>
+    <img src="https://dummyimage.com/420x320/7f7fff/333333.png&text=Sample 2">
+    <img src="https://dummyimage.com/420x320/7fff7f/333333.png&text=Sample 3">
+    <img src="https://dummyimage.com/420x320/7f7f7f/333333.png&text=Sample 4">
   </div>
 </div>
