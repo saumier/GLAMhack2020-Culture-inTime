@@ -18,6 +18,7 @@ class SearchController < ApplicationController
     elsif params[:query]
       @productions = Production
                      .where('lower(label) LIKE :search OR lower(locality) LIKE :search OR lower(location_label) LIKE :search OR lower(country) LIKE :search', search: "%#{params[:query].downcase}%")
+                     .order(:date_of_first_performance)
                      .paginate(page: params[:page])
     else
       @productions = Production
