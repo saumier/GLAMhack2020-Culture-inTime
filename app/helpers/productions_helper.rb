@@ -12,7 +12,14 @@ module ProductionsHelper
   end
 
   def date_display(date_time)
+    #I18n.l(date_time, format: :short)
+    date_time.strftime("%d %b %Y")
+    #date_time.httpdate
+  end
+
+  def date_time_display(date_time)
+    Time.zone = 'Eastern Time (US & Canada)'
     #I18n.l(date_time, format: :long)
-    date_time.httpdate
+    date_time.in_time_zone.strftime("%d %b %Y - %a - %H:%M %Z")
   end
 end
