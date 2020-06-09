@@ -3,7 +3,7 @@
   <div class="meta">
 
     <% if  @performance_dates.count > 0 %>
-      <h4>Performances</h4> 
+      <h4> <%= "Past " if @performance_dates.last <  Time.now %>Performances</h4> 
       <% @performance_dates.each do |performance| %>
         <%= date_display(Time.parse(performance))  %> <br>
       <% end %>
