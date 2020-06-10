@@ -2,7 +2,9 @@
   "name": "culture-intime",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "3.5"
+    "@rails/webpacker": "3.5",
+    "react-dom": "^16.13.1",
+    "react-on-rails": "^11.3.0"
   },
   "devDependencies": {
     "webpack-dev-server": "2.11.2"
