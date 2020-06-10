@@ -1,6 +1,9 @@
 {
   "name": "culture-intime",
   "private": true,
+  "engines": {
+    "node": "10.15.3"
+  },
   "dependencies": {
     "@rails/webpacker": "3.5",
     "axios": "^0.19.2",
