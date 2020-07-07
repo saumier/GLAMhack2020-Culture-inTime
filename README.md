@@ -1,6 +1,6 @@
 GLAMhack 2020 - Culture inTime
 =========================
-Simple event calendar for public viewing that written in Rails, SPARQL and Semantic UI (web interface platform). Using existing linked open data (LOD) on productions & events, locations & venues, and dates to feed contemporary and historical data into this calendar. Coming soon: LOD on artists and works. 
+Simple event calendar for public viewing written in Rails, SPARQL and Semantic UI (web interface platform). Using existing linked open data (LOD) on productions & events, locations & venues, and dates to feed contemporary and historical data into this calendar. Coming soon: LOD on artists and works. 
 
 Go to https://culture-intime.herokuapp.com/ and view calendar
 
