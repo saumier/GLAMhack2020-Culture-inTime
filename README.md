@@ -57,8 +57,8 @@ Spotlight Page
 
 Event Details page - Montreal
 
-![Alt text](/images/ProductionDetails.png "Production Details")
+![Production Details](https://raw.githubusercontent.com/saumier/GLAMhack2020-Culture-inTime/master/images/ProductionDetails.png)
 
 Production Details page - Zurich
 
-![Alt text](/images/ProductionDetails-Schauspielhaus-Zurich.png "Production Details")
+![Production Details](/images/ProductionDetails-Schauspielhaus-Zurich.png)
