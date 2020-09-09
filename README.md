@@ -13,7 +13,7 @@ Data Sources
 =========================
 Building on existing data sources:
 * Dataset already integrated into Wikidata: data from Schauspielehaus, Zurich. For reference see: https://www.wikidata.org/wiki/Wikidata:WikiProject_Performing_arts/Reports/Ingesting_Production_Databases_of_the_Performing_Arts
-* Dataset from Artsdata.ca: pan-Canadian knowledge graph for the performing arts 
+* Dataset from [Artsdata.ca](http://artsdata.ca): pan-Canadian knowledge graph for the performing arts 
 
 
 Background
@@ -30,18 +30,18 @@ It can:
 - Provide a robust listing of arts and cultural events, both historical and current. Audiences are able to search for things they are interested in, learn more about performing arts productions and events, find new interests, et cetera.
 - Reduce duplication of work in area of data entry
 
-The code is a simple as possible to demonstrate the potential of using LOD (structured data) to create a calendar for arts and cultural events that is generated from data in Wikidata and the Artsdata.ca knowledge graph. 
+The code is a simple as possible to demonstrate the potential of using LOD (structured data) to create a calendar for arts and cultural events that is generated from data in Wikidata and the [Artsdata.ca](http://artsdata.ca) knowledge graph. 
 
 The user interface is designed to allow visitors to search for events. They can:
 - Use the Spotlight feature to quickly view events based on the following search criteria: name of city and predetermined date range.
 - Use Time Period buttons to search a time period (international).
-- Use a Search field to enter a search using the following criteria: name of production, city and country.
+- Use a Search field to enter a search using the following criteria: name of production, theatre, city, or country.
 - Select an image from a gallery to find related information.
-- Visit the source of the data to learn more (in the example of an Artsdata.ca event, Click Visit Source to be redirected to the Art Organization website.
+- Visit the source of the data to learn more (in the example of an Artsdata.ca event, Click Visit Event Webpage to be redirected to the Art Organization website.
 
-Note: Currently when you enter a location, data only exists for Switzerland and Canada (country), Zurich or Montreal/Laval (city)  
+Note: Currently when you enter a location, data only exists for Switzerland and Canada (country), Zurich, Montreal/Laval/Toronto/Vancouver/Fredericton and some small villages in Quebec.  
 
-Search results list events sorted by date, title and location.
+Search results list events sorted by date.
 
 
 Challenges
