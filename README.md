@@ -61,4 +61,4 @@ Event Details page - Montreal
 
 Production Details page - Zurich
 
-![Production Details](/images/ProductionDetails-Schauspielhaus-Zurich.png)
+![Production Details](https://raw.githubusercontent.com/saumier/GLAMhack2020-Culture-inTime/master/images/ProductionDetails-Schauspielhaus-Zurich.png)
