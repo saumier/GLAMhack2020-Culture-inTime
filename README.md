@@ -53,7 +53,7 @@ More UI Images
 =========================
 Spotlight Page
 
-![Alt text](/images/Spotlight.png "Spotlight Page")
+![Spotlight Page](https://raw.githubusercontent.com/saumier/GLAMhack2020-Culture-inTime/master/images/Spotlight.png)
 
 Event Details page - Montreal
 
