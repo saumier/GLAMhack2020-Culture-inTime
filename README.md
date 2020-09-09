@@ -4,7 +4,7 @@ Simple event calendar for public viewing written in Rails, SPARQL and Semantic U
 
 Go to https://culture-intime.herokuapp.com/ and view calendar
 
-![Alt text](/images/HomePage.png "Home Page")
+![Home Page](https://raw.githubusercontent.com/saumier/GLAMhack2020-Culture-inTime/master/images/HomePage.png)
 
 
 
