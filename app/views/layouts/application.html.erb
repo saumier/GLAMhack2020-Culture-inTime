@@ -9,6 +9,16 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-98179180-5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-98179180-5');
+    </script>
+
   </head>
 
   <body>
@@ -19,7 +29,6 @@
         </a>
         <a class="item" href="/">Home</a>
         <a class="item" href="/spotlight">Spotlight</a>
-        <a class="disabled item">Productions</a>
         <a class="disabled item">People</a>
         <a class="disabled item">Places</a>
         <div class="right menu">
