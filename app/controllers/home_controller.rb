@@ -9,4 +9,7 @@ class HomeController < ApplicationController
     @spotlights = Production.limit(3)
   end
 
+  def admin
+  end
+
 end
