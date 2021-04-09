@@ -1,20 +1,4 @@
 <h1 class="header">Admin</h1>
 <div class="ui divider"></div>
-<%= link_to admin_build_cache_path(source: "canada"), class: "ui floated primary button" do%>
-  Refresh Canada<i class="right circle icon"></i>
-<% end %>
-
-<%= link_to admin_build_cache_path(source: "swiss"), class: "ui floated primary button" do%>
-  Refresh Swiss<i class="right circle icon"></i>
-<% end %>
 
 
-
-<script>
-var collection = document.getElementsByClassName('button')
-for (item of collection) {
-  item.onclick = function() {
-    this.classList.add("loading");
-  };
-}
-</script>
