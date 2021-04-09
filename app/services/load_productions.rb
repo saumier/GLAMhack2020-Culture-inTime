@@ -19,10 +19,6 @@ class LoadProductions
     load
   end
 
-  def data
-    @data
-  end
-
   def load
     # Production.delete_all  "country = 5 AND (category = 'Something' OR category = 'Else')"
     puts "loading..."
