@@ -5,25 +5,31 @@ class LoadProductions
     @client = ArtsdataAPI::V1::Client.new()
   end
 
-  def canada
-    @data = @client.execute_sparql(SparqlLoader.load("canadian_productions"))
-    puts "Canadian: dropping..."
-    Production.where(country: "Canada").delete_all
-    load
+  # def canada
+  #   @data = @client.execute_sparql(SparqlLoader.load("canadian_productions"))
+  #   puts "Canadian: dropping..."
+  #   Production.where(country: "Canada").delete_all
+  #   load
+  # end
+
+  # def swiss
+  #   @data = @client.execute_sparql(SparqlLoader.load("swiss_productions"))
+  #   puts "Swiss: dropping..."
+  #   Production.where(country: "Switzerland").delete_all
+  #   load
+  # end
+
+  def source(data_source)
+    data = @client.execute_sparql(data_source.sparql)
+    data_source.productions.delete_all
+    load(data_source, data)
   end
 
-  def swiss
-    @data = @client.execute_sparql(SparqlLoader.load("swiss_productions"))
-    puts "Swiss: dropping..."
-    Production.where(country: "Switzerland").delete_all
-    load
-  end
-
-  def load
-    # Production.delete_all  "country = 5 AND (category = 'Something' OR category = 'Else')"
+  def load(data_source, data)
+    
     puts "loading..."
-    productions = @data.map do |production|
-      p = Production.new
+    productions = data.map do |production|
+      p = data_source.productions.new
       p.label = CGI.unescapeHTML(production['label']['value']) if production['label']
       p.location_label = production['venue']['value'] if production['venue']
       p.date_of_first_performance = production['start']['value'] if production['start']

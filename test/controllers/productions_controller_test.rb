@@ -17,7 +17,7 @@ class ProductionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create production" do
     assert_difference('Production.count') do
-      post productions_url, params: { production: { date_of_first_performance: @production.date_of_first_performance, description: @production.description, label: @production.label, location_label: @production.location_label, location_uri: @production.location_uri, main_image: @production.main_image, production_company_label: @production.production_company_label, production_company_uri: @production.production_company_uri } }
+      post productions_url, params: { production: { data_source_id: data_sources(:one), date_of_first_performance: @production.date_of_first_performance, description: @production.description, label: @production.label, location_label: @production.location_label, location_uri: @production.location_uri, main_image: @production.main_image, production_company_label: @production.production_company_label, production_company_uri: @production.production_company_uri } }
     end
 
     assert_redirected_to production_url(Production.last)

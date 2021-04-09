@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @data_source.name %>
+</p>
+
+<p>
+  <strong>Sparql:</strong>
+  <%= @data_source.sparql %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @data_source.email %>
+</p>
+
+<p>
+  <strong>Loaded:</strong>
+  <%= @data_source.loaded %>
+</p>
+
+<%= link_to 'Edit', edit_data_source_path(@data_source) %> |
+<%= link_to 'Back', data_sources_path %> |
+
+<%= link_to 'Load', load_data_source_path %>

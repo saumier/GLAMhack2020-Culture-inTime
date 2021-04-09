@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   root 'home#index'
   get '/search', to: 'search#index'
 
@@ -10,5 +11,12 @@ Rails.application.routes.draw do
  
 
   resources :productions
+  resources :data_sources do
+    member do
+      get 'load'
+    end
+    
+  end
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

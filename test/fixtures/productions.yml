@@ -9,6 +9,7 @@ one:
   production_company_label: MyString
   description: MyString
   main_image: MyString
+  data_source_id: one
 
 two:
   label: MyString
@@ -19,3 +20,4 @@ two:
   production_company_label: MyString
   description: MyString
   main_image: MyString
+  data_source_id: one
