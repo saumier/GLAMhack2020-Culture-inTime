@@ -1,8 +1,7 @@
 GLAMhack 2020 - Culture inTime
 =========================
-Simple event calendar for public viewing written in Rails, SPARQL and Semantic UI (web interface platform). Using existing linked open data (LOD) on productions & events, locations & venues, and dates to feed contemporary and historical data into this calendar. Coming soon: LOD on artists and works. 
-
-Go to https://culture-intime.herokuapp.com/ and view calendar
+Simple event calendar for public viewing of Performing Arts Production metadata. This application uses existing linked open data (LOD) sources to load production titles, venues, and dates. You can search across productions or explore 'Spotlights' that group productions into themes.
+Go to https://culture-intime.herokuapp.com/ to try it out!
 
 ![Home Page](https://raw.githubusercontent.com/saumier/GLAMhack2020-Culture-inTime/master/images/HomePage.png)
 
@@ -36,11 +35,10 @@ It can:
 The code is a simple as possible to demonstrate the potential of using LOD (structured data) to create a calendar for arts and cultural events that is generated from data in Wikidata and the [Artsdata.ca](http://artsdata.ca) knowledge graph. 
 
 The user interface is designed to allow visitors to search for events. They can:
-- Use the Spotlight feature to quickly view events based on the following search criteria: name of city and predetermined date range.
-- Use Time Period buttons to search a time period (international).
+- Use the Spotlight feature to quickly view events grouped by theme.
+- Use Time Period buttons to search a time period.
 - Use a Search field to enter a search using the following criteria: name of production, theatre, city, or country.
-- Select an image from a gallery to find related information.
-- Visit the source of the data to learn more (in the example of an Artsdata.ca event, Click Visit Event Webpage to be redirected to the Art Organization website.
+- Visit the source of the data to learn more (in the example of an Artsdata.ca event, Click Visit Event Webpage to be redirected to the Arts Organization website.
 
 Note: Currently when you enter a location, data only exists for Switzerland and Canada (country), Zurich, Montreal/Laval/Toronto/Vancouver/Fredericton and some small villages in Quebec.  
 
