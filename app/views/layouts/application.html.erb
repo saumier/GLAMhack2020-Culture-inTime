@@ -40,10 +40,11 @@
             <a href="#/ms/login" class="ui secondary  button">Log In</a>
             <a href="#/ms/profile" class="ui basic button"><span data-ms-member="email"></span></a>
           </div>
+          <% if !cookies[:user] %>
           <div class="item">
             <a href="#/ms/signup/6072f56a96a83a00043d49cd/#/ms/content/!members" class="ui primary button">Sign Up</a>
-             <a href="#/ms/logout" class="ui secondary button">Log Out</a>
           </div>
+          <% end %>
         </div>
       </div>
     </div>

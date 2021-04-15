@@ -6,16 +6,16 @@
 
 <p>
 <div class="ui labeled button" tabindex="0">
-  <div class="ui black button">
+  <div class="ui tertiary button">
   <i class="user icon"></i> Author
   </div>
-   <div class="ui basic black left pointing label"><%= @data_source.email %></div>
+   <div class="ui basic tertiary left pointing label"><%= @data_source.email %></div>
 </div>
 <div class="ui labeled button" tabindex="0">
- <div class="ui black button">
+ <div class="ui tertiary button">
   <i class="calendar icon"></i> Cached on
   </div>
-   <div class="ui basic blue left pointing label"><%= @data_source.loaded %></div>
+   <div class="ui basic tertiary left pointing label"><%= @data_source.loaded %></div>
 </div>
 <% button_label =  @data_source.loaded.blank? ? 'Execute SPARQL' : 'Refresh cache' %>
 <%= link_to button_label, load_data_source_path, class: "ui button primary show_loading" %>
