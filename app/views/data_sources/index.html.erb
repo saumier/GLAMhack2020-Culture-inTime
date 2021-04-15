@@ -10,6 +10,7 @@
       <th>Name</th>
       <th>Author</th>
       <th>Cached On</th>
+      <th>Chained to layer</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,6 +23,7 @@
       
         <td><%= data_source.email %></td>
         <td><%= data_source.loaded %></td>
+        <td><%= data_source.layers.map {|l| l.id }.join(', ') %></td>
         <td>
           <%= link_to 'Show', data_source, class: "ui button tiny green" %>
           <% if cookies[:user] == data_source.email || is_admin? %>

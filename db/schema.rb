@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_09_012924) do
+ActiveRecord::Schema.define(version: 2021_04_15_211940) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "chains", id: false, force: :cascade do |t|
+    t.integer "data_source_id"
+    t.integer "linked_data_source_id"
+    t.index ["data_source_id", "linked_data_source_id"], name: "index_chains_on_data_source_id_and_linked_data_source_id", unique: true
+    t.index ["linked_data_source_id", "data_source_id"], name: "index_chains_on_linked_data_source_id_and_data_source_id", unique: true
+  end
 
   create_table "data_sources", force: :cascade do |t|
     t.string "name"
