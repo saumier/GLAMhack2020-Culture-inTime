@@ -18,7 +18,7 @@ class ProductionsController < ApplicationController
     return unless @production.country == 'Canada'
 
     data = @performances_client.canada(@production.production_uri)
-    @performance_dates = data.map { |performance| performance['startDate']['value'] }
+    @performance_dates = data.map { |performance| performance.dig('startDate','value') }
                              .uniq
                              .reject(&:blank?)
                              .sort
