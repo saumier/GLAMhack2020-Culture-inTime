@@ -1,9 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Data Sources</h1>
+<h1 class="header">Data Sources</h1>
+<div class="ui divider"></div>
 
 
-<table>
+<%= link_to 'New Data Source', new_data_source_path, class: "ui button primary" %>
+
+<table class="ui striped table selectable celled">
   <thead>
     <tr>
       <th>Name</th>
@@ -20,16 +23,18 @@
       
         <td><%= data_source.email %></td>
         <td><%= data_source.loaded %></td>
-        <td><%= link_to 'Show', data_source %></td>
-        <% if cookies[:user] == data_source.email %>
-        <td><%= link_to 'Edit', edit_data_source_path(data_source) %></td>
-        <td><%= link_to 'Destroy', data_source, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to 'Show', data_source, class: "ui button tiny green" %>
+          <% if cookies[:user] == data_source.email || cookies[:user] == "gregory@culturecreates.com" %>
+          <%= link_to 'Edit', edit_data_source_path(data_source), class: "ui button tiny" %>
+          <%= link_to 'Destroy', data_source, method: :delete, data: { confirm: 'Are you sure?' }, class: "ui button tiny red" %>
         <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
 
-<%= link_to 'New Data Source', new_data_source_path %>
+
+<%= link_to 'New Data Source', new_data_source_path, class: "ui button primary" %>

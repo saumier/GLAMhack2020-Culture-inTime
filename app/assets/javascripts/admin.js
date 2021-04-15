@@ -10,8 +10,6 @@ $(document).on('turbolinks:load', function() {
   // A $( document ).ready() block.
 
 
-
-
 });
 
 

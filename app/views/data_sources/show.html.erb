@@ -1,26 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @data_source.name %>
-</p>
-
-<p>
-  <strong>Sparql:</strong>
+<h1 class="header">Data Sources</h1>
+<div class="ui divider"></div>
+<h1>
+  <%= @data_source.name %> 
+</h1>
+<h3>
+  <%= @data_source.email %> <span><%= @data_source.loaded %></span>
+</h3>
+<%= link_to 'Load', load_data_source_path, class: "ui button blue" %>
+<pre>
+ <code>
   <%= @data_source.sparql %>
-</p>
+</code>
+</pre>
 
-<p>
-  <strong>Email:</strong>
-  <%= @data_source.email %>
-</p>
 
-<p>
-  <strong>Loaded:</strong>
-  <%= @data_source.loaded %>
-</p>
 
-<%= link_to 'Edit', edit_data_source_path(@data_source) %> |
-<%= link_to 'Back', data_sources_path %> |
+<%= link_to 'Edit', edit_data_source_path(@data_source), class: "ui button green" %>
 
-<%= link_to 'Load', load_data_source_path %>
+<%= link_to 'Back', data_sources_path, class: "ui button black" %>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

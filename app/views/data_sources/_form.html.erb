@@ -1,4 +1,4 @@
-<%= form_with(model: data_source, local: true) do |form| %>
+<%= form_with(model: data_source, local: true, class: "ui form") do |form| %>
   <% if data_source.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(data_source.errors.count, "error") %> prohibited this data_source from being saved:</h2>
@@ -18,17 +18,16 @@
 
   <div class="field">
     <%= form.label :sparql %>
-    <%= form.text_area :sparql %>
+    <%= form.text_area :sparql, rows: 40 %>
   </div>
 
   <div class="field">
-    <%= form.label :email %>
-    <%= form.email_field :email %>
-  </div>
-
- 
+    <%= form.email_field :email, readonly: true %>
+   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Update", class: 'ui button green' %>
   </div>
+
 <% end %>
+
