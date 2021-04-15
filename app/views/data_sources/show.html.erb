@@ -1,30 +1,46 @@
-<p id="notice"><%= notice %></p>
 
-<h1 class="header">Data Sources</h1>
-<div class="ui divider"></div>
-<h1>
-  <%= @data_source.name %> 
+<h1 class="ui header">
+  <%= @data_source.name %>
 </h1>
-<h3>
-  <%= @data_source.email %> <span><%= @data_source.loaded %></span>
-</h3>
-<%= link_to 'Load', load_data_source_path, class: "ui button blue" %>
+<div class="ui divider"></div>
+
+<p>
+<div class="ui labeled button" tabindex="0">
+  <div class="ui black button">
+  <i class="user icon"></i> Author
+  </div>
+   <div class="ui basic black left pointing label"><%= @data_source.email %></div>
+</div>
+<div class="ui labeled button" tabindex="0">
+ <div class="ui black button">
+  <i class="calendar icon"></i> Cached on
+  </div>
+   <div class="ui basic blue left pointing label"><%= @data_source.loaded %></div>
+</div>
+<%= link_to 'Refresh cache', load_data_source_path, class: "ui button primary show_loading" %>
+
+
+
+</p>
+<p id="notice">
+<% if notice %>
+<div class="ui info message">
+  <div class="header">
+   <%= notice %>
+  </div>
+
+</div>
+  <% end %>
+</p>
+
+
 <pre>
  <code>
   <%= @data_source.sparql %>
 </code>
 </pre>
 
-
-
-<%= link_to 'Edit', edit_data_source_path(@data_source), class: "ui button green" %>
-
+ <% if cookies[:user] == @data_source.email || cookies[:user] == "gregory@culturecreates.com" %>
+  <%= link_to 'Edit', edit_data_source_path(@data_source), class: "ui button green" %>
+<% end %>
 <%= link_to 'Back', data_sources_path, class: "ui button black" %>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>

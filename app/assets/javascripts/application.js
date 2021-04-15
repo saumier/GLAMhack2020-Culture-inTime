@@ -18,7 +18,6 @@
 
 $( document ).ready(function() {
   
-
   MemberStack.onReady.then(function(member) {   
 
     // check if member is logged in   
@@ -26,5 +25,12 @@ $( document ).ready(function() {
       Cookies.set('user', member["email"])
     } else {
       Cookies.remove('user')
-    }  })
+    }  });
+
+    // Load Productions button should indicate loading
+    $('.show_loading').on("click",function() {
+      $(this).addClass("loading");
+    });
+
+
 });

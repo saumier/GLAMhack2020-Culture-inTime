@@ -9,18 +9,30 @@ module ArtsdataAPI
       def initialize(oauth_token: nil, graph_repository: 'artsdata')
         @oauth_token = oauth_token
         @graph_repository = graph_repository
+        @logger = Rails.logger
       end
 
       def execute_sparql sparql
+        @logger.info "sparql: #{sparql.truncate(8000).squish}"
         data = request_json(
           http_method: :post,
           endpoint: "/repositories/#{@graph_repository}",
-          params: { 'query': sparql }
+          params: { 'query': escape_sparql(sparql) }
         )
-        data['results']['bindings']
+
+        if data.status == 200
+          j = Oj.load(data.body)
+          msg = j['results']['bindings']
+        else
+          msg = data.body
+        end
+
+        { code: data.status, message: msg }
       end
 
       private
+
+
 
       def client
         @client ||= Faraday.new(API_ENDPOINT) do |client|
@@ -28,6 +40,12 @@ module ArtsdataAPI
           client.adapter Faraday.default_adapter
           client.headers['Authorization'] = "token #{oauth_token}" if oauth_token.present?
         end
+      end
+
+      # Format str to not interfere with SPARQL
+      def escape_sparql sparql
+        sparql.gsub(/'/, "\\\\'") # escape single quote
+              .gsub('\\', ' ') # remove double backslash
       end
 
       def request_text(http_method:, endpoint:, params: {})
@@ -41,7 +59,7 @@ module ArtsdataAPI
         client.headers['Accept'] = 'application/json'
         client.headers['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8'
         response = client.public_send(http_method, endpoint, params)
-        Oj.load(response.body)
+       # Oj.load(response.body)
       end
 
       def request_jsonld(http_method:, endpoint:, params: {})

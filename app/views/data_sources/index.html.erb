@@ -3,15 +3,12 @@
 <h1 class="header">Data Sources</h1>
 <div class="ui divider"></div>
 
-
-<%= link_to 'New Data Source', new_data_source_path, class: "ui button primary" %>
-
 <table class="ui striped table selectable celled">
   <thead>
     <tr>
       <th>Name</th>
-      <th>Email</th>
-      <th>Loaded</th>
+      <th>Author</th>
+      <th>Cached On</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -35,6 +32,6 @@
   </tbody>
 </table>
 
-
-
-<%= link_to 'New Data Source', new_data_source_path, class: "ui button primary" %>
+<% if cookies[:user] %>
+  <%= link_to 'New Data Source', new_data_source_path, class: "ui button primary" %>
+<% end %>

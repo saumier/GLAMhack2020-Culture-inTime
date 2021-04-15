@@ -22,11 +22,11 @@
   </div>
 
   <div class="field">
-    <%= form.email_field :email, readonly: true %>
+    <%= form.email_field :email, value: cookies[:user] ,readonly: true %>
    </div>
 
   <div class="actions">
-    <%= form.submit "Update", class: 'ui button green' %>
+    <%= form.submit "Update", class: 'ui button green show_loading' %>
   </div>
 
 <% end %>

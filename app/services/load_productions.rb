@@ -20,10 +20,31 @@ class LoadProductions
   # end
 
   def source(data_source)
-    data = @client.execute_sparql(data_source.sparql)
+    @data = @client.execute_sparql(data_source.sparql)
+
+    puts "self.error? #{self.error?} status:#{@data[:code]}"
+    return if self.error?
+    
     data_source.productions.delete_all
-    load(data_source, data)
+    load(data_source, @data[:message])
+    data_source.loaded = Time.now
+    data_source.save
   end
+
+def error?
+  @data[:code] != 200
+end
+
+def errors
+  return unless @data[:code] != 200
+  @data[:message] 
+end
+
+def count
+  return 0 unless @data[:code] == 200
+  @data[:message].count
+end
+
 
   def load(data_source, data)
     

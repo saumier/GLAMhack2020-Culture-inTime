@@ -16,7 +16,11 @@ class DataSourcesController < ApplicationController
   def load
     loader = LoadProductions.new
     loader.source(@data_source)
-    redirect_to data_source_path(@data_source)
+    if loader.error?
+      redirect_to @data_source, notice: "Ran into a problem. #{loader.errors}"
+    else
+      redirect_to @data_source, notice: "#{loader.count} Productions loaded."
+    end
   end
 
   # GET /data_sources/new
