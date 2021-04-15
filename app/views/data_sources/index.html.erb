@@ -6,6 +6,7 @@
 <table class="ui striped table selectable celled">
   <thead>
     <tr>
+    <th>ID</th>
       <th>Name</th>
       <th>Author</th>
       <th>Cached On</th>
@@ -16,6 +17,7 @@
   <tbody>
     <% @data_sources.each do |data_source| %>
       <tr>
+      <td><%= data_source.id %></td>
         <td><%= data_source.name %></td>
       
         <td><%= data_source.email %></td>

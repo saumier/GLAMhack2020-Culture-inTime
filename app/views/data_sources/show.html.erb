@@ -17,9 +17,12 @@
   </div>
    <div class="ui basic blue left pointing label"><%= @data_source.loaded %></div>
 </div>
-<%= link_to 'Refresh cache', load_data_source_path, class: "ui button primary show_loading" %>
+<% button_label =  @data_source.loaded.blank? ? 'Execute SPARQL' : 'Refresh cache' %>
+<%= link_to button_label, load_data_source_path, class: "ui button primary show_loading" %>
 
-
+<% if @data_source.loaded.present? %>
+  <%= link_to 'View all', search_path(data_source:@data_source.id), class: "ui button tertiary" %>
+<% end %>
 
 </p>
 <p id="notice">
