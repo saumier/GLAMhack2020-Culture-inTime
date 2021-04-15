@@ -22,7 +22,8 @@
   </div>
 
   <div class="field">
-    <%= form.email_field :email, value: cookies[:user] ,readonly: true %>
+    <% readonly = true unless is_admin? %>
+    <%= form.email_field :email, value: cookies[:user], readonly: readonly %>
    </div>
 
   <div class="actions">

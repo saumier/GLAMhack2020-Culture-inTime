@@ -40,7 +40,7 @@
 </code>
 </pre>
 
- <% if cookies[:user] == @data_source.email || cookies[:user] == "gregory@culturecreates.com" %>
+ <% if cookies[:user] == @data_source.email || is_admin? %>
   <%= link_to 'Edit', edit_data_source_path(@data_source), class: "ui button green" %>
 <% end %>
 <%= link_to 'Back', data_sources_path, class: "ui button black" %>
