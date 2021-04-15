@@ -14,3 +14,17 @@
 //= require jquery_ujs
 //= require activestorage
 //= require_tree .
+
+
+$( document ).ready(function() {
+  
+
+  MemberStack.onReady.then(function(member) {   
+
+    // check if member is logged in   
+    if (member.loggedIn)  {
+      Cookies.set('user', member["email"])
+    } else {
+      Cookies.remove('user')
+    }  })
+});

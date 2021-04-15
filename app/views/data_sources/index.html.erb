@@ -2,11 +2,11 @@
 
 <h1>Data Sources</h1>
 
+
 <table>
   <thead>
     <tr>
       <th>Name</th>
-      <th>Sparql</th>
       <th>Email</th>
       <th>Loaded</th>
       <th colspan="3"></th>
@@ -17,12 +17,14 @@
     <% @data_sources.each do |data_source| %>
       <tr>
         <td><%= data_source.name %></td>
-        <td><%= data_source.sparql.truncate(50) %></td>
+      
         <td><%= data_source.email %></td>
         <td><%= data_source.loaded %></td>
         <td><%= link_to 'Show', data_source %></td>
+        <% if cookies[:user] == data_source.email %>
         <td><%= link_to 'Edit', edit_data_source_path(data_source) %></td>
         <td><%= link_to 'Destroy', data_source, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
