@@ -2,14 +2,22 @@
 
 <h1 class="header">Data Sources</h1>
 <div class="ui divider"></div>
-
+<% if !cookies[:user] %>
+  Please  <a href="#/ms/signup/6072f56a96a83a00043d49cd/#/ms/content/!members" class="ui primary"> Sign Up </a> or Log In to add data sources. 
+ <div class="ui divider"></div>
+ <% end %>
+ <p> <a class="ui button small red" href="https://docs.google.com/document/d/1ht17HeUmt-TXJIk139XP4usTn1AV5boWFoSmFw53q-w/edit?usp=sharing">Readme first</a> guide for adding your own SPARQL </p>
+   
+   
+  <h1 class="header">SPARQL Queries - Performing Arts Productions </h1> 
+   <div class="ui divider"></div>
 <table class="ui striped table selectable celled">
   <thead>
     <tr>
     <th>ID</th>
       <th>Name</th>
       <th>Author</th>
-      <th>Cached On</th>
+      <th>Cached</th>
       <th colspan="1"></th>
     </tr>
   </thead>
@@ -40,12 +48,13 @@
 
 
 <% if cookies[:user] %>
-  <%= link_to 'New Data Source', new_data_source_path, class: "ui button primary" %>
+  <%= link_to 'Add Data Source', new_data_source_path, class: "ui button primary" %>
 <% end %>
 
 
-<h1 class="header">Data Layers</h1>
+<h1 class="header"> SPARQL Queries - Supplementary data</h1>
 <div class="ui divider"></div>
+<p class="meta">Note: Use PRODUCTION_URI_PLACEHOLDER in your SPARQL to pass in the Production URI </p>
 
 <table class="ui striped table selectable celled">
   <thead>
