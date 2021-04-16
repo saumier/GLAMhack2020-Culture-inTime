@@ -8,7 +8,9 @@ Go to https://culture-intime.herokuapp.com/ to try it out!
 Types of Users
 =========================
 Power User:
+
 Spotlight Editor:
+
 Browser:
 
 Data Sources
