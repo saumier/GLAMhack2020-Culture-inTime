@@ -36,7 +36,7 @@
           <%= link_to 'Show', data_source, class: "ui button tiny green" %>
           <% if cookies[:user] == data_source.email || is_admin? %>
           <%= link_to 'Edit', edit_data_source_path(data_source), class: "ui button tiny" %>
-          <%= link_to 'Add Suppliment', new_data_source_path(layer: data_source.id ),  data: { confirm: 'Create supplimentary SPARQL chained to this SPARQL?' }, class: "ui button tiny" %>
+          <%= link_to '+Supp', new_data_source_path(layer: data_source.id ),  data: { confirm: 'Create supplimentary SPARQL chained to this SPARQL?' }, class: "ui button tiny" %>
           <%= link_to 'Destroy', data_source, method: :delete, data: { confirm: 'Are you sure?' }, class: "ui button tiny red" %>
         <% end %>
         </span>
