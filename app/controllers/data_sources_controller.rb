@@ -19,7 +19,7 @@ class DataSourcesController < ApplicationController
     if loader.error?
       redirect_to @data_source, notice: "Ran into a problem. #{loader.errors}"
     else
-      redirect_to @data_source, notice: "#{loader.count} Productions loaded."
+      redirect_to @data_source, notice: "#{loader.count} returned by SPARQL, #{ Production.where(data_source: @data_source).count } loaded into cache."
     end
   end
 

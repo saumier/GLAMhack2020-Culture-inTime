@@ -10,24 +10,18 @@ class ProductionsController < ApplicationController
   # GET /productions/1
   # GET /productions/1.json
   def show
-    @performances_client ||= LoadPerformances.new
-    @performance_dates = []
-    @performance_urls = []
-    @performance_tickets = []
+    # get list of layers chained to this production
+    puts "looking for production id #{@production.data_source.id}"
+    layers = DataSource.all.select {|d| d.layers.ids == [@production.data_source.id]}
 
-    return unless @production.country == 'Canada'
+    puts "layers: #{layers}"
+    loader = LoadProductions.new
+    @details_list = []
+    layers.each do |layer|
+      puts "Getting layer #{layer.id}"
+      @details_list << loader.query_uri(layer, "<#{@production[:production_uri]}>")
+    end
 
-    data = @performances_client.canada(@production.production_uri)
-    @performance_dates = data[:message].map { |performance| performance.dig('startDate','value') }
-                             .uniq
-                             .reject(&:blank?)
-                             .sort
-    @performance_urls = data[:message].map { |performance| performance.dig('webpage', 'value') }
-                            .uniq
-                            .reject(&:blank?)
-    @performance_tickets = data[:message].map { |performance| performance.dig('offer_url', 'value') }
-                               .uniq
-                               .reject(&:blank?)
   end
 
   # GET /productions/new

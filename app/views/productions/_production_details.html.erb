@@ -1,0 +1,36 @@
+
+<div class="ui divider"></div>
+  <div class="meta">
+    <h2>
+    <%= @details_list.first.first.dig('section','value') %>
+    </h2>
+    
+    <% @details_list.first.each do |line| %>
+
+      <% if line.dig('style','value') == "button" %>
+        <a href="<%= line.dig('content','value') %>">
+          <div class="right floated content">
+            <div class="ui primary button ">
+              <%= line.dig('label','value') %> 
+              <i class="right chevron icon"></i>
+            </div>
+          </div>
+        </a>
+      <% else %>
+        <% if line.dig('content','datatype') == 'http://www.w3.org/2001/XMLSchema#dateTime' %>
+          <%=  date_time_display(line.dig('content','value')) %> 
+        <% else %>
+          <%= line.dig('content','value') %> 
+        <% end %>
+         <br>
+      <% end %>
+
+     
+    <% end %>
+  
+
+   
+</div>
+
+ 
+

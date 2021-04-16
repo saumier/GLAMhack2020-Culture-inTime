@@ -5,45 +5,40 @@ class LoadProductions
     @client = ArtsdataAPI::V1::Client.new()
   end
 
-  # def canada
-  #   @data = @client.execute_sparql(SparqlLoader.load("canadian_productions"))
-  #   puts "Canadian: dropping..."
-  #   Production.where(country: "Canada").delete_all
-  #   load
-  # end
+  def query_uri(data_source, production_uri)
+    sparql = data_source.sparql.gsub('PRODUCTION_URI_PLACEHOLDER', production_uri)
+    @data = @client.execute_sparql(sparql)
 
-  # def swiss
-  #   @data = @client.execute_sparql(SparqlLoader.load("swiss_productions"))
-  #   puts "Swiss: dropping..."
-  #   Production.where(country: "Switzerland").delete_all
-  #   load
-  # end
+    puts "query_uri: #{@data}"    
+    return if self.error?
+    
+    @data[:message]
+  end
 
   def source(data_source)
     @data = @client.execute_sparql(data_source.sparql)
 
-    puts "self.error? #{self.error?} status:#{@data[:code]}"
     return if self.error?
-    
+
     data_source.productions.delete_all
     load(data_source, @data[:message])
     data_source.loaded = Time.now
     data_source.save
   end
 
-def error?
-  @data[:code] != 200
-end
+  def error?
+    @data[:code] != 200
+  end
 
-def errors
-  return unless @data[:code] != 200
-  @data[:message] 
-end
+  def errors
+    return unless @data[:code] != 200
+    @data[:message] 
+  end
 
-def count
-  return 0 unless @data[:code] == 200
-  @data[:message].count
-end
+  def count
+    return 0 unless @data[:code] == 200
+    @data[:message].count
+  end
 
 
   def load(data_source, data)
