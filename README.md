@@ -7,11 +7,11 @@ Go to https://culture-intime.herokuapp.com/ to try it out!
 
 Types of Users
 =========================
-Power User:
+Power User: Has the expertise needed to create SPARQL queries (to fetch data from graph databases) as well as the ability to configure Spotlights on data. Login credentials required.
 
-Spotlight Editor:
+Spotlight Editor: Has the ability to configure Spotlights on data. Login credentials required.
 
-Browser:
+Browser: Visitor to Culture InTime that wants to use Search functionality and pre-configured Spotlights to peruse data.  No login credentials required.
 
 Data Sources
 =========================
