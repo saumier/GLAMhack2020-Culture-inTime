@@ -5,8 +5,11 @@ Go to https://culture-intime.herokuapp.com/ to try it out!
 
 ![Home Page](https://raw.githubusercontent.com/saumier/GLAMhack2020-Culture-inTime/master/images/HomePage.png)
 
-
-
+Types of Users
+=========================
+Power User:
+Spotlight Editor:
+Browser:
 
 Data Sources
 =========================
