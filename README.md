@@ -1,20 +1,34 @@
-GLAMhack 2020 - Culture inTime
+GLAMhack 2021 - Culture inTime 
 =========================
-Simple event calendar for public viewing of Performing Arts Production metadata. This application uses existing linked open data (LOD) sources to load production titles, venues, and dates. You can search across productions or explore 'Spotlights' that group productions into themes.
-Go to https://culture-intime.herokuapp.com/ to try it out!
+
+GLAMhack 2021 provided the opportunity to continue working on Culture inTime, an app for adding and visualizing Performing Arts Production metadata in a simple calendar-like user interface. Culture inTime was first developed during GLAMhack 2020. A few features have been added during GLAMhack 2021: 
+* Anyone with the right skills can now add their own SPARQL queries of existing linked open data (LOD) sources
+* Anyone with the right skills can now add supplementary data to augment specific productions in Culture inTime 
+* Anyone can now configure their own Spotlights based on data sources in Culture inTime
+
+Culture inTime continues to focus on Performing Arts Productions. to load production titles, venues, and dates. You can search across productions or explore 'Spotlights' that group productions into themes.
+Go to https://culture-intime-2.herokuapp.com/ to try it out!
 
 ![Home Page](https://raw.githubusercontent.com/saumier/GLAMhack2020-Culture-inTime/master/images/HomePage.png)
 
 Types of Users
 =========================
-Power User: Has the expertise needed to create SPARQL queries (to fetch data from graph databases) as well as the ability to configure Spotlights on data. Login credentials required.
-
-Spotlight Editor: Has the ability to configure Spotlights on data. Login credentials required.
-
-Browser: Visitor to Culture InTime that wants to use Search functionality and pre-configured Spotlights to peruse data.  No login credentials required.
+* Power User: Has the expertise needed to create SPARQL queries (to fetch data from graph databases) as well as the ability to configure Spotlights on data. Login credentials required.
+* Spotlight Editor: Has the ability to configure Spotlights on data. Login credentials required.
+* Browser: Visitor to Culture InTime that wants to use Search functionality and pre-configured Spotlights to peruse data.  No login credentials required.
 
 Data Sources
 =========================
+In the section called Data Sources, power users can add their own SPARQL queries of existing linked open data (LOD) sources to Culture inTime. The only prerequisties are:
+* Have technical expertise in creating SPARQL queries
+* Knowledge of the graph you want to query
+* Sign up for login credentials (open to all) 
+
+Two types of SPARQL queries can be added to Culture inTime
+* Queries to add Performing Arts Productions. These queries are limited to xyz
+* Queries to add supplementary data that augments specific productions. These queries are loaded on the fly and always attached to one or more Performing Arts Production queries.
+To learn more about how to add these queries, see the Technical Guide.
+
 Building on existing data sources:
 * Dataset already integrated into Wikidata: data from Schauspielehaus, Zurich. For reference see: https://www.wikidata.org/wiki/Wikidata:WikiProject_Performing_arts/Reports/Ingesting_Production_Databases_of_the_Performing_Arts
 * Dataset from [Artsdata.ca](http://artsdata.ca): pan-Canadian knowledge graph for the performing arts 
