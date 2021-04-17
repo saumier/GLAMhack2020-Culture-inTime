@@ -7,8 +7,6 @@ GLAMhack 2021 provided the opportunity to continue working on Culture inTime, a 
 
 Culture inTime continues to put its focus on Performing Arts Productions. Go to https://culture-intime-2.herokuapp.com/ to try it out!
 
-![Home Page](https://raw.githubusercontent.com/saumier/GLAMhack2020-Culture-inTime/master/images/HomePage.png)
-
 Types of Users
 =========================
 * Power User: Can create SPARQL queries and Spotlights on data.
