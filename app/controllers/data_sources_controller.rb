@@ -26,16 +26,28 @@ class DataSourcesController < ApplicationController
   # GET /data_sources/new
   def new
     @data_source = DataSource.new
+    @data_sources = DataSource.all
   end
 
   # GET /data_sources/1/edit
   def edit
+    @data_sources = DataSource.all
   end
 
   # POST /data_sources
   # POST /data_sources.json
   def create
+    @data_sources = DataSource.all
+    
     @data_source = DataSource.new(data_source_params)
+
+    puts "Adding data sources...#{params[:data_source][:data_sources]} "
+    params[:data_source][:data_sources].each do |k,v|
+      puts "check #{DataSource.find(k).name}"
+      @data_source.layers << DataSource.find(k) if v == "1"
+   end
+
+
 
     respond_to do |format|
       if @data_source.save
@@ -80,6 +92,6 @@ class DataSourcesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def data_source_params
-      params.require(:data_source).permit(:name, :sparql, :email, :loaded)
+      params.require(:data_source).permit(:name, :sparql, :email, :loaded, :data_sources)
     end
 end

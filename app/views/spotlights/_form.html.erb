@@ -58,13 +58,14 @@
   <div class="field">
     Data sources 
  
-<% @data_sources.each do |t| %>
+  <% @data_sources.each do |t| %>
   <div class="inline field">
     <%= form.check_box "data_sources[#{t.id}]"  %>
     <%= form.label t.name  %>
   </div>
   <% end %>
- </div>
+
+</div>
 
 
   <div class="actions">

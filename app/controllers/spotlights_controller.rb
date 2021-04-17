@@ -27,6 +27,7 @@ class SpotlightsController < ApplicationController
   # POST /spotlights.json
   def create
     @data_sources = DataSource.all
+    
     @spotlight = Spotlight.new(spotlight_params)
     puts "Adding data sources...#{params[:spotlight][:data_sources]} "
     params[:spotlight][:data_sources].each do |k,v|
