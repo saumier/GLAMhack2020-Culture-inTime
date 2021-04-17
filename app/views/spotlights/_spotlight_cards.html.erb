@@ -22,9 +22,11 @@
       <span>
         <i class="arrow alternate circle down outline icon"></i> <%= spotlight.location %>
       </span>
+      <% if cookies[:user] %>
         <span class="right floated edit">
           <a href="/spotlights/<%= spotlight.id %>"><i class="edit icon"></i></a>
-      </span>
+        </span>
+         <% end %>
     </div>
   </div>
   <% end %>
