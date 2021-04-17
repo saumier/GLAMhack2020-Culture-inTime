@@ -34,6 +34,8 @@ Spotlights
 =========================
 Spotlights group together productions around a theme. They can span time, locations and data sources. Once you create a login, creating spotlights is easy with a new form that allows Spotlight Editors to choose their parameters and then share their spotlight with the community. Basic editorial functionality is available. To see some Spotlights, go to https://culture-intime-2.herokuapp.com/spotlights.
 
+![Spotlight Page](https://raw.githubusercontent.com/saumier/GLAMhack2020-Culture-inTime/master/images/Spotlight.png)
+
 Technical Guide
 ========================
 To add Spolights or a new data source using SPARQL, please consult this [Google Doc](https://docs.google.com/document/d/1ht17HeUmt-TXJIk139XP4usTn1AV5boWFoSmFw53q-w/edit?usp=sharing) 
