@@ -21,6 +21,11 @@
   <%= @spotlight.query %>
 </p>
 
+<p>
+  <strong>Data Sources:</strong>
+<%= @spotlight.data_sources.map {|d| d.name} %>
+</p>
+
 <div class="ui divider"></div>
 
 <%= link_to 'Edit', edit_spotlight_path(@spotlight), class: "ui button primary" %> 

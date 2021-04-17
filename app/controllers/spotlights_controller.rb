@@ -15,16 +15,24 @@ class SpotlightsController < ApplicationController
   # GET /spotlights/new
   def new
     @spotlight = Spotlight.new
+    @data_sources = DataSource.all
   end
 
   # GET /spotlights/1/edit
   def edit
+    @data_sources = DataSource.all
   end
 
   # POST /spotlights
   # POST /spotlights.json
   def create
+    @data_sources = DataSource.all
     @spotlight = Spotlight.new(spotlight_params)
+    puts "Adding data sources...#{params[:spotlight][:data_sources]} "
+    params[:spotlight][:data_sources].each do |k,v|
+      puts "check #{DataSource.find(k).name}"
+      @spotlight.data_sources << DataSource.find(k) if v == "1"
+   end
 
     respond_to do |format|
       if @spotlight.save
@@ -69,6 +77,6 @@ class SpotlightsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def spotlight_params
-      params.require(:spotlight).permit(:title, :subtitle, :image, :description, :location, :start_date, :end_date, :query)
+      params.require(:spotlight).permit(:title, :subtitle, :image, :description, :location, :start_date, :end_date, :query, :data_sources )
     end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_16_214847) do
+ActiveRecord::Schema.define(version: 2021_04_17_013559) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,13 @@ ActiveRecord::Schema.define(version: 2021_04_16_214847) do
     t.datetime "loaded"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "data_sources_spotlights", id: false, force: :cascade do |t|
+    t.bigint "data_source_id"
+    t.bigint "spotlight_id"
+    t.index ["data_source_id"], name: "index_data_sources_spotlights_on_data_source_id"
+    t.index ["spotlight_id"], name: "index_data_sources_spotlights_on_spotlight_id"
   end
 
   create_table "productions", force: :cascade do |t|

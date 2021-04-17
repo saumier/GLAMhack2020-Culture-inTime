@@ -3,7 +3,7 @@
 <div class="ui special link four stackable cards spotlight-cards">
 <% spotlight_list.each do |spotlight| %>
   <div class="ui card">
-    <a class="blurring dimmable image" href="/search?query=<%= spotlight.query %>">
+    <a class="blurring dimmable image" href="<%= format_query(spotlight) %>">
      <div class="ui dimmer">
         <div class="content">
           <div class="center">
@@ -14,9 +14,9 @@
       <img src="<%= spotlight.image %>">
     </a>
     <div class="content">
-      <a class="header" href="/search?query=<%= spotlight.query %>"><%= spotlight.title %></a>
+      <a class="header" href="<%= format_query(spotlight) %>"><%= spotlight.title %></a>
       <div class="meta"><%= spotlight.subtitle %></div>
-      <a class="description" href="/search?query=<%= spotlight.query %>"><%= spotlight.description %> </a>
+      <a class="description" href="<%= format_query(spotlight) %>"><%= spotlight.description %> </a>
     </div>
     <div class="extra content">
       <span>
