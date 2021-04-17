@@ -9,7 +9,10 @@ class SearchController < ApplicationController
     end
 
     if params[:data_source].present?
-      @productions = @productions.where(data_source_id: [params[:data_source]])
+      list_datasources = params[:data_source].split(",")
+      
+
+      @productions = @productions.where(data_source_id: list_datasources)
     end
 
     if params[:query].present?
