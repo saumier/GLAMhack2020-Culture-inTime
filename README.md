@@ -1,7 +1,7 @@
 GLAMhack 2021 - Culture inTime 
 =========================
 
-GLAMhack 2021 provided the opportunity to continue working on Culture inTime, an app for adding and visualizing Performing Arts Production metadata in a simple calendar-like user interface. Culture inTime was first developed during GLAMhack 2020. A few features have been added: 
+GLAMhack 2021 provided the opportunity to continue working on Culture inTime, a sandbox for adding and visualizing Performing Arts Production metadata in a simple calendar-like user interface. Culture inTime was first developed during GLAMhack 2020. A few features have been added: 
 * Anyone with the right skills can now add their own SPARQL queries of existing linked open data (LOD) sources
 * Anyone can now configure their own Spotlights based on data sources in Culture inTime
 
@@ -25,17 +25,20 @@ In the section called Data Sources, power users can add their own SPARQL queries
 Two types of SPARQL queries can be added to Culture inTime
 * Queries to add names of Performing Arts Productions. These queries are limited to the performing arts production title and basic premiere information.
 * Queries to add supplementary data that augments specific productions. Supplementary data can be things like event dates, performers, related reviews and juxtaposed data (examples are indigenous territorial mappings, cultural funding statistics).  Supplementary queries are loaded on the fly and always attached to one or more Performing Arts Production queries.
-To learn more about how to add these queries, see the Technical Guide.
+To learn more about how to add queries, see the Technical Guide.
 
-Building on existing data sources:
-* Dataset already integrated into Wikidata: data from Schauspielehaus, Zurich. For reference see: https://www.wikidata.org/wiki/Wikidata:WikiProject_Performing_arts/Reports/Ingesting_Production_Databases_of_the_Performing_Arts
-* Dataset from [Artsdata.ca](http://artsdata.ca): pan-Canadian knowledge graph for the performing arts 
+Different contributors are continuously adding and building on data sources. To see what's been added, go to https://culture-intime-2.herokuapp.com/data_sources.
+
+
+Spotlights
+=========================
+Spotlights group together productions around a theme. They can span time, locations and data sources. Once you create a login, creating spotlights is easy with a new form that allows Spotlight Editors to choose their parameters and then share their spotlight with the community. Basic editorial functionality is available. To see some Spotlights, go to https://culture-intime-2.herokuapp.com/spotlights.
 
 Technical Guide
 ========================
 To add Spolights or a new data source using SPARQL, please consult this [Google Doc](https://docs.google.com/document/d/1ht17HeUmt-TXJIk139XP4usTn1AV5boWFoSmFw53q-w/edit?usp=sharing) 
 
-Background
+GLAMHACK 2020
 =========================
 This 2020 GlamHack Challenge resulted from the discussions we had earlier this week during the workshops related to performing arts data and our goal is to create a Linked Open Data Ecosystem for the Performing Arts.
 
