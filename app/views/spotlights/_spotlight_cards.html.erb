@@ -1,0 +1,31 @@
+
+
+<div class="ui special link four stackable cards spotlight-cards">
+<% spotlight_list.each do |spotlight| %>
+  <div class="ui card">
+    <a class="blurring dimmable image" href="/search?query=<%= spotlight.query %>">
+     <div class="ui dimmer">
+        <div class="content">
+          <div class="center">
+            <div class="ui inverted button">Add Friend</div>
+          </div>
+        </div>
+      </div>
+      <img src="<%= spotlight.image %>">
+    </a>
+    <div class="content">
+      <a class="header" href="/search?query=<%= spotlight.query %>"><%= spotlight.title %></a>
+      <div class="meta"><%= spotlight.subtitle %></div>
+      <a class="description" href="/search?query=<%= spotlight.query %>"><%= spotlight.description %> </a>
+    </div>
+    <div class="extra content">
+      <span>
+        <i class="arrow alternate circle down outline icon"></i> <%= spotlight.location %>
+      </span>
+        <span class="right floated edit">
+          <a href="/spotlights/<%= spotlight.id %>"><i class="edit icon"></i></a>
+      </span>
+    </div>
+  </div>
+  <% end %>
+</div>

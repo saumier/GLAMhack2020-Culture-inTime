@@ -4,7 +4,7 @@ class DataSourcesController < ApplicationController
   # GET /data_sources
   # GET /data_sources.json
   def index
-    @data_sources = DataSource.all
+    @data_sources = DataSource.all.order(:name)
   end
 
   # GET /data_sources/1

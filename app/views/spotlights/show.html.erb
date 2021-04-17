@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+
+<%= render partial: "spotlight_cards", locals: { spotlight_list: [@spotlight] } %>
+
+
+<h2> Spotlight search parameters </h2>
+<div class="ui divider"></div>
+<p>
+  <strong>Start date:</strong>
+  <%= @spotlight.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @spotlight.end_date %>
+</p>
+
+<p>
+  <strong>Query:</strong>
+  <%= @spotlight.query %>
+</p>
+
+<div class="ui divider"></div>
+
+<%= link_to 'Edit', edit_spotlight_path(@spotlight), class: "ui button primary" %> 
+<%= link_to 'Back', spotlights_path, class: "ui button secondary" %>
+
+ <%= link_to 'Destroy', @spotlight, method: :delete, data: { confirm: 'Are you sure?' }, class: "ui button red" %>
