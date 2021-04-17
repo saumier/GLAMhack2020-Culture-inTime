@@ -12,9 +12,14 @@ module ProductionsHelper
   end
 
   def date_display(date_time)
-    #I18n.l(date_time, format: :short)
-    date_time.strftime("%d %b %Y")
-    #date_time.httpdate
+    begin
+      #I18n.l(date_time, format: :short)
+      date_time.strftime("%d %b %Y")
+      #date_time.httpdate
+    rescue => exception
+      "no date"
+    end
+   
   end
 
   def date_time_display(date_time)
