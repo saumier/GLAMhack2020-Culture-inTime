@@ -19,7 +19,7 @@ class DataSourcesController < ApplicationController
     if loader.error?
       redirect_to @data_source, notice: "Ran into a problem. #{loader.errors}"
     else
-      redirect_to @data_source, notice: "#{loader.count} returned by SPARQL, #{ Production.where(data_source: @data_source).count } loaded into cache."
+      redirect_to @data_source, notice: "#{loader.count} returned by SPARQL, #{ Production.where(data_source: @data_source).count } loaded into cache. Cache errors: #{loader.cache_errors}"
     end
   end
 
@@ -38,16 +38,12 @@ class DataSourcesController < ApplicationController
   # POST /data_sources.json
   def create
     @data_sources = DataSource.all
-    
     @data_source = DataSource.new(data_source_params)
 
     puts "Adding data sources...#{params[:data_source][:data_sources]} "
     params[:data_source][:data_sources].each do |k,v|
-      puts "check #{DataSource.find(k).name}"
-      @data_source.layers << DataSource.find(k) if v == "1"
-   end
-
-
+    @data_source.layers << DataSource.find(k) if v == "1"
+  end
 
     respond_to do |format|
       if @data_source.save
@@ -85,13 +81,14 @@ class DataSourcesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_data_source
-      @data_source = DataSource.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def data_source_params
-      params.require(:data_source).permit(:name, :sparql, :email, :loaded, :data_sources)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_data_source
+    @data_source = DataSource.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def data_source_params
+    params.require(:data_source).permit(:name, :sparql, :email, :loaded, :data_sources)
+  end
 end
