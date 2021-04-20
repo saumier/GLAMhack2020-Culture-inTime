@@ -25,12 +25,12 @@ Two types of SPARQL queries can be added to Culture inTime
 * Queries to add supplementary data that augments specific productions. Supplementary data can be things like event dates, performers, related reviews and juxtaposed data (examples are indigenous territorial mappings, cultural funding statistics).  Supplementary queries are loaded on the fly and always attached to one or more Performing Arts Production queries.
 To learn more about how to add queries, see the Technical Guide.
 
-Different contributors are continuously adding and building on data sources. To see what's been added, go to https://culture-intime-2.herokuapp.com/data_sources.
+Different contributors are continuously adding and building on data sources. To see what's been added, go to https://culture-intime.herokuapp.com/data_sources.
 
 
 Spotlights
 =========================
-Spotlights group together productions around a theme. They can span time, locations and data sources. Once you create a login, creating spotlights is easy with a new form that allows Spotlight Editors to choose their parameters and then share their spotlight with the community. Basic editorial functionality is available. To see some Spotlights, go to https://culture-intime-2.herokuapp.com/spotlights.
+Spotlights group together productions around a theme. They can span time, locations and data sources. Once you create a login, creating spotlights is easy with a new form that allows Spotlight Editors to choose their parameters and then share their spotlight with the community. Basic editorial functionality is available. To see some Spotlights, go to https://culture-intime.herokuapp.com/spotlights.
 
 ![Spotlight Page](https://raw.githubusercontent.com/saumier/GLAMhack2020-Culture-inTime/master/images/Spotlight.png)
 
