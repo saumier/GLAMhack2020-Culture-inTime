@@ -40,7 +40,7 @@ To add Spolights or a new data source using SPARQL, please consult this [Google 
 
 GLAMHACK 2020
 =========================
-This 2020 GlamHack Challenge resulted from the discussions we had earlier this week during the workshops related to performing arts data and our goal is to create a Linked Open Data Ecosystem for the Performing Arts.
+The 2020 GlamHack Challenge resulted from the discussions we had earlier in the week during the workshops related to performing arts data and our goal is to create a Linked Open Data Ecosystem for the Performing Arts.
 
 Some of us have been working on this for years, focusing mostly on data cleansing and data publication.
 Now, the time has come to shift our focus towards creating concrete applications that consume data from different sources.
