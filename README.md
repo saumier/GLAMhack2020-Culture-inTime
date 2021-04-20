@@ -5,7 +5,7 @@ GLAMhack 2021 provided the opportunity to continue working on Culture inTime, a 
 * Anyone with the right skills can now add their own SPARQL queries of existing linked open data (LOD) sources
 * Anyone can now configure their own Spotlights based on data sources in Culture inTime
 
-Culture inTime continues to put its focus on Performing Arts Productions. Go to https://culture-intime-2.herokuapp.com/ to try it out!
+Culture inTime continues to put its focus on Performing Arts Productions. Go to https://culture-intime.herokuapp.com/ to try it out!
 
 Types of Users
 =========================
