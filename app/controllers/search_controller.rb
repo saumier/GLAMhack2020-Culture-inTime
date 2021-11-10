@@ -1,30 +1,24 @@
 class SearchController < ApplicationController
 
   def index
-    if params[:start]
+
+    @productions = Production.all
+    if params[:start].present? && params[:end].present?
       date_range = [DateTime.parse(params[:start])..DateTime.parse(params[:end])]
-      if params[:query]
-        @productions = Production
-                       .where(date_of_first_performance: date_range)
-                       .where('lower(label) LIKE :search OR lower(locality) LIKE :search OR lower(location_label) LIKE :search OR lower(country) LIKE :search', search: "%#{params[:query].downcase}%")
-                       .order(:date_of_first_performance)
-                       .paginate(page: params[:page])
-      else
-        @productions = Production
-                       .where(date_of_first_performance: date_range)
-                       .order(:date_of_first_performance)
-                       .paginate(page: params[:page])
-      end
-    elsif params[:query]
-      @productions = Production
-                     .where('lower(label) LIKE :search OR lower(locality) LIKE :search OR lower(location_label) LIKE :search OR lower(country) LIKE :search', search: "%#{params[:query].downcase}%")
-                     .order(:date_of_first_performance)
-                     .paginate(page: params[:page])
-    else
-      @productions = Production
-                     .order(:date_of_first_performance)
-                     .limit(1000)
-                     .paginate(page: params[:page])
+      @productions = @productions.where(date_of_first_performance: date_range)
     end
+
+    if params[:data_source].present?
+      list_datasources = params[:data_source].split(",")
+      
+
+      @productions = @productions.where(data_source_id: list_datasources)
+    end
+
+    if params[:query].present?
+      @productions = @productions.where('lower(label) LIKE :search OR lower(locality) LIKE :search OR lower(location_label) LIKE :search OR lower(country) LIKE :search', search: "%#{params[:query].downcase}%")
+    end
+
+    @productions = @productions.order(:date_of_first_performance).paginate(page: params[:page])
   end
 end

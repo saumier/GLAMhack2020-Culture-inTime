@@ -1,0 +1,57 @@
+<h1 class="ui header">
+  <%= @data_source.name %>
+</h1>
+<div class="ui divider"></div>
+
+<p>
+  <div class="ui labeled button" tabindex="0">
+    <div class="ui tertiary button">
+      <i class="user icon"></i> Author
+    </div>
+    <div class="ui basic tertiary left pointing label"><%= @data_source.email %></div>
+  </div>
+
+  <%  if @data_source.layers.count == 0 %>
+    <div class="ui labeled button" tabindex="0">
+      <div class="ui tertiary button">
+        <i class="calendar icon"></i> Cached on
+      </div>
+    
+      <div class="ui basic tertiary left pointing label"><%= @data_source.loaded %></div>
+    </div>
+
+    <% button_label =  @data_source.loaded.blank? ? 'Execute SPARQL' : 'Refresh cache' %>
+    <%= link_to button_label, load_data_source_path, class: "ui button primary show_loading" %>
+
+    <% if @data_source.loaded.present? %>
+    <%= link_to 'View all', search_path(data_source:@data_source.id), class: "ui button tertiary" %>
+    <% end %>
+
+  <% else %>
+    Chained to layers: <%= @data_source.layers.map {|l| l.name }.join(", ") %>
+  <% end %>
+
+
+</p>
+<p id="notice">
+  <% if notice %>
+  <div class="ui info message">
+    <div class="header">
+      <%= notice %>
+    </div>
+
+  </div>
+  <% end %>
+</p>
+
+
+<pre>
+ <code>
+  <%= @data_source.sparql %>
+</code>
+</pre>
+
+<% if cookies[:user] == @data_source.email || is_admin? %>
+<%= link_to 'Edit', edit_data_source_path(@data_source), class: "ui button green" %>
+<% end %>
+<%= link_to 'Back', data_sources_path, class: "ui button black" %>

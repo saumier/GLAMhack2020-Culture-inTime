@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :data_source %>
+    <%= form.collection_select(:data_source_id, DataSource.all, :id, :name, {:prompt => false}) %>
+  </div>
+
+  <div class="field">
     <%= form.label :label %>
     <%= form.text_field :label, size: 100 %>
   </div>

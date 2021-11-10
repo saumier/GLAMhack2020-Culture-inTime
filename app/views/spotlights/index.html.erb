@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+ <h1 class="header">Spotlights</h1>
+<div class="ui divider"></div>
+<% if cookies[:user]%>
+<p>
+<%= link_to 'Add Spotlight', new_spotlight_path, class: "ui button primary" %>
+</p>
+<% end %>
+
+<%= render partial: "spotlight_cards", locals: { spotlight_list: @spotlights } %>

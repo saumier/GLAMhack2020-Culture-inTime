@@ -10,5 +10,5 @@ class ClientTest < ActionView::TestCase
     sparql = "PREFIX schema: <http://schema.org/> select ?name where { <http://kg.artsdata.ca/resource/K12-298> schema:name ?name }"
     assert_equal expected, client.execute_sparql(sparql).first['name']['value']
   end
-
+  
 end

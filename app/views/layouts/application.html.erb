@@ -19,31 +19,47 @@
       gtag('config', 'UA-98179180-5');
     </script>
 
+    <!-- Memberstack --> 
+    <script src="https://api.memberstack.io/static/memberstack.js?custom" data-memberstack-id="f4a75214cc225e6bb57ff9b5f56df038"> </script> 
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
   </head>
 
   <body>
-    <div class="ui container">
+    <div id="top-nav" data-turbolinks-permanent class="ui container">
       <div class="ui stackable menu">
         <a class="header item" href="/">
           <span style="margin-left: 8px;">Culture inTime</span>
         </a>
         <a class="item" href="/">Home</a>
-        <a class="item" href="/spotlight">Spotlight</a>
+        <a class="item" href="/spotlights">Spotlights</a>
         <a class="disabled item">People</a>
         <a class="disabled item">Places</a>
+        <a class="item" href="/data_sources">Data Sources</a>
         <div class="right menu">
           <div class="item">
-            <div class="ui secondary disabled button">Log In</div>
+            <span>
+              <a href="#/ms/login" class="ui secondary  button">Log In</a>
+            </span>
+            <span>
+            <a href="#/ms/profile" class="ui basic button"><span data-ms-member="email"></span></a>
+          </span>
+           <span>
+            <a href="#/ms/signup/6072f56a96a83a00043d49cd/#/ms/content/!members" class="ui primary button">Sign Up</a>
+             </span>
           </div>
-          <div class="item">
-            <div class="ui primary disabled button">Sign Up</div>
-          </div>
+         
         </div>
       </div>
     </div>
     <div class="ui container content">
       <%= yield %>
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
   </body>
 </html>
 

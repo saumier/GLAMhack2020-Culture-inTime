@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  sparql: MyString
+  email: MyString
+  loaded: 2021-04-08 21:04:12
+
+two:
+  name: MyString
+  sparql: MyString
+  email: MyString
+  loaded: 2021-04-08 21:04:12

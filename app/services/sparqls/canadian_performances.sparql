@@ -1,8 +1,21 @@
 PREFIX schema: <http://schema.org/>
-select * where { 
-   <http://kg.artsdata.ca/resource/dansedanse-ca_animals-distinction-frontera>  ^schema:superEvent ?event .
-    OPTIONAL { ?event schema:startDate ?startDate . }   
-    OPTIONAL { ?event schema:url ?webpage . }   
-    OPTIONAL { ?event schema:offers/schema:url ?offer_url }  
-                                                                                                           
-} limit 100 
+
+select * where {
+    {
+        values ?event {<https://www.lavitrineduquebec.com/activity/Femme_s_#Event>}
+        filter NOT EXISTS { ?event schema:subEvent ?subEvent }
+    }
+    UNION 
+    {
+        <https://www.lavitrineduquebec.com/activity/Femme_s_#Event>  schema:subEvent ?event .
+    }
+    OPTIONAL {
+        ?event schema:startDate ?startDate .
+    }   
+    OPTIONAL {
+        ?event schema:url ?webpage .
+    }   
+    OPTIONAL {
+        ?event schema:offers/schema:url ?offer_url 
+    }  
+} limit 100

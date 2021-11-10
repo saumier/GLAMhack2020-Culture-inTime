@@ -10,24 +10,18 @@ class ProductionsController < ApplicationController
   # GET /productions/1
   # GET /productions/1.json
   def show
-    @performances_client ||= LoadPerformances.new
-    @performance_dates = []
-    @performance_urls = []
-    @performance_tickets = []
+    # get list of layers chained to this production
+    puts "looking for production id #{@production.data_source.id}"
+    layers = DataSource.all.select {|d| d.layers.ids == [@production.data_source.id]}
 
-    return unless @production.country == 'Canada'
+    puts "layers: #{layers}"
+    loader = LoadProductions.new
+    @details_list = []
+    layers.each do |layer|
+      puts "Getting layer #{layer.id}"
+      @details_list << loader.query_uri(layer, "<#{@production[:production_uri]}>")
+    end
 
-    data = @performances_client.canada(@production.production_uri)
-    @performance_dates = data.map { |performance| performance['startDate']['value'] }
-                             .uniq
-                             .reject(&:blank?)
-                             .sort
-    @performance_urls = data.map { |performance| performance.dig('webpage', 'value') }
-                            .uniq
-                            .reject(&:blank?)
-    @performance_tickets = data.map { |performance| performance.dig('offer_url', 'value') }
-                               .uniq
-                               .reject(&:blank?)
   end
 
   # GET /productions/new
@@ -87,6 +81,6 @@ class ProductionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def production_params
-      params.require(:production).permit(:label, :location_label, :location_uri, :date_of_first_performance, :production_company_uri, :production_company_label, :description, :main_image)
+      params.require(:production).permit(:data_source_id, :label, :location_label, :location_uri, :date_of_first_performance, :production_company_uri, :production_company_label, :description, :main_image)
     end
 end

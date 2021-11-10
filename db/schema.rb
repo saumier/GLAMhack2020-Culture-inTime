@@ -10,10 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_06_025724) do
+ActiveRecord::Schema.define(version: 2021_04_17_013559) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "chains", id: false, force: :cascade do |t|
+    t.integer "data_source_id"
+    t.integer "linked_data_source_id"
+    t.index ["data_source_id", "linked_data_source_id"], name: "index_chains_on_data_source_id_and_linked_data_source_id", unique: true
+    t.index ["linked_data_source_id", "data_source_id"], name: "index_chains_on_linked_data_source_id_and_data_source_id", unique: true
+  end
+
+  create_table "data_sources", force: :cascade do |t|
+    t.string "name"
+    t.text "sparql"
+    t.string "email"
+    t.datetime "loaded"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "data_sources_spotlights", id: false, force: :cascade do |t|
+    t.bigint "data_source_id"
+    t.bigint "spotlight_id"
+    t.index ["data_source_id"], name: "index_data_sources_spotlights_on_data_source_id"
+    t.index ["spotlight_id"], name: "index_data_sources_spotlights_on_spotlight_id"
+  end
 
   create_table "productions", force: :cascade do |t|
     t.string "label"
@@ -29,6 +52,22 @@ ActiveRecord::Schema.define(version: 2020_06_06_025724) do
     t.string "country"
     t.string "locality"
     t.string "production_uri"
+    t.bigint "data_source_id"
+    t.index ["data_source_id"], name: "index_productions_on_data_source_id"
   end
 
+  create_table "spotlights", force: :cascade do |t|
+    t.string "title"
+    t.string "subtitle"
+    t.string "image"
+    t.string "description"
+    t.string "location"
+    t.date "start_date"
+    t.date "end_date"
+    t.string "query"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "productions", "data_sources"
 end

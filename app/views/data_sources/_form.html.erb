@@ -1,0 +1,44 @@
+<%= form_with(model: data_source, local: true, class: "ui form") do |form| %>
+  <% if data_source.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(data_source.errors.count, "error") %> prohibited this data_source from being saved:</h2>
+
+      <ul>
+      <% data_source.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sparql %>
+    <%= form.text_area :sparql, rows: 40 %>
+  </div>
+
+  <div class="field">
+    <% readonly = true unless is_admin? %>
+    <%= form.email_field :email, value: cookies[:user], readonly: readonly %>
+   </div>
+
+  <div class="field">
+  Data sources to chain:
+ 
+  <% @data_sources.each do |t| %>
+  <div class="inline field">
+    <%= form.check_box "data_sources[#{t.id}]"  %>
+    <%= form.label t.name  %>
+  </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit "Update", class: 'ui button green show_loading' %>
+  </div>
+
+<% end %>
+

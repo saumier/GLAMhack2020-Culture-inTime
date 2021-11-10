@@ -76,3 +76,5 @@ gem 'faraday'
 gem 'oj'
 gem 'will_paginate'
 gem "will_paginate_semantic_ui"
+gem 'httparty'
+gem 'jquery-rails'
