@@ -129,7 +129,8 @@ GEM
     oj (3.10.6)
     pg (1.2.3)
     public_suffix (4.0.5)
-    puma (3.12.6)
+    puma (4.3.11)
+      nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
     rack-proxy (0.6.5)
@@ -248,7 +249,7 @@ DEPENDENCIES
   mini_racer
   oj
   pg (>= 0.18, < 2.0)
-  puma (~> 3.11)
+  puma (~> 4.3)
   rails (~> 5.2.0)
   react_on_rails (= 11.0.0)
   sass-rails (~> 5.0)
