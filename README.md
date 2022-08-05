@@ -1,3 +1,5 @@
+For latest version see https://github.com/culturecreates/Culture-inTime
+
 GLAMhack 2021 - Culture inTime 
 =========================
 
